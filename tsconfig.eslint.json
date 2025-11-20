@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "rootDirs": ["./src", "./.storybook"]
+  },
+  "include": ["./src/**/*", "./.storybook/**/*"],
+  "exclude": ["node_modules", "./dist"]
+}
