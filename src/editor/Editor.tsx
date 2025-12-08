@@ -35,7 +35,7 @@ import {
   VideoPlugin,
 } from "./plugins";
 import { LexicalContentEditable as ContentEditable } from "./ui/ContentEditable";
-import { PlaygroundNodes } from "./nodes";
+import { MuiLexicalNodes } from "./nodes";
 import { playgroundEditorTheme } from "./themes/playgroundEditorTheme";
 import { IToolbarControls } from "./types";
 
@@ -199,7 +199,7 @@ export const Editor = (props: IEditorProps) => {
         editorState: initialEditorState || null,
         editable: !readOnly,
         namespace: "Playground",
-        nodes: [...PlaygroundNodes],
+        nodes: [...MuiLexicalNodes],
         onError: (error: Error) => {
           throw error;
         },

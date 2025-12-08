@@ -11,7 +11,7 @@ import { ImageNode } from "./Image";
 import { InlineImageNode } from "./InlineImage";
 import { VideoNode } from "./Video";
 
-export const PlaygroundNodes: Array<Klass<LexicalNode>> = [
+export const MuiLexicalNodes: Array<Klass<LexicalNode>> = [
   HeadingNode,
   ListNode,
   ListItemNode,

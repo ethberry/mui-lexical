@@ -7,7 +7,7 @@ import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext
 import { ClickableLinkPlugin } from "@lexical/react/LexicalClickableLinkPlugin";
 
 import { playgroundEditorTheme } from "../editor/themes/playgroundEditorTheme";
-import { PlaygroundNodes } from "../editor/nodes";
+import { MuiLexicalNodes } from "../editor/nodes";
 import { StyledEditorWrapper } from "./styled";
 
 export interface IDisplayProps {
@@ -39,7 +39,7 @@ export const Display = (props: IDisplayProps) => {
   const initialConfig = {
     namespace: "Display",
     theme: playgroundEditorTheme,
-    nodes: [...PlaygroundNodes],
+    nodes: [...MuiLexicalNodes],
     editable: false,
     onError: (error: Error) => {
       console.error(error);
