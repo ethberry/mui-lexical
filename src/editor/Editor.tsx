@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { AutoFocusPlugin } from "@lexical/react/LexicalAutoFocusPlugin";
 import { CheckListPlugin } from "@lexical/react/LexicalCheckListPlugin";
 import { ClearEditorPlugin } from "@lexical/react/LexicalClearEditorPlugin";
 import { ClickableLinkPlugin } from "@lexical/react/LexicalClickableLinkPlugin";
@@ -17,7 +16,7 @@ import { LexicalComposer } from "@lexical/react/LexicalComposer";
 import { EditorState } from "lexical";
 import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin";
 
-import { SharedHistoryContext, useSharedHistoryContext, ToolbarContext } from "./context";
+import { SharedHistoryContext, ToolbarContext, useSharedHistoryContext } from "./context";
 import {
   CodeActionMenuPlugin,
   CodeHighlightPlugin,
@@ -113,7 +112,6 @@ const EditorContent = (props: TEditorContentProps) => {
             />
           )}
           <ShortcutsPlugin editor={activeEditor} setIsLinkEditMode={setIsLinkEditMode} />
-          <AutoFocusPlugin />
           <ClearEditorPlugin />
           <ComponentPickerPlugin />
           <HistoryPlugin externalHistoryState={historyState} />

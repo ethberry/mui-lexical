@@ -266,7 +266,7 @@ export const ToolbarPlugin: FC<IToolbarPluginProps> = ({
     undo: <UndoButton disabled={!toolbarState.canUndo || !isEditable} activeEditor={activeEditor} />,
     redo: <RedoButton disabled={!toolbarState.canRedo || !isEditable} activeEditor={activeEditor} />,
     blockFormat: (
-      <Fragment>
+      <Fragment key={"toolbar-format-dropdown"}>
         {toolbarState.blockType in blockTypeToBlockName && activeEditor === editor && (
           <BlockFormatDropDown
             controls={controls.blockFormat}
@@ -279,7 +279,7 @@ export const ToolbarPlugin: FC<IToolbarPluginProps> = ({
       </Fragment>
     ),
     codeLanguages: (
-      <Fragment>
+      <Fragment key={"toolbar-code-dropdown"}>
         <CodeLanguageDropdown
           disabled={!isEditable}
           toolbarState={toolbarState}
@@ -301,7 +301,7 @@ export const ToolbarPlugin: FC<IToolbarPluginProps> = ({
       />
     ),
     code: (
-      <Fragment>
+      <Fragment key={"toolbar-code-button"}>
         {canViewerSeeInsertCodeButton && (
           <CodeButton disabled={!isEditable} activeEditor={activeEditor} isCode={toolbarState.isCode} />
         )}
@@ -332,7 +332,7 @@ export const ToolbarPlugin: FC<IToolbarPluginProps> = ({
   return (
     <div className="toolbar">
       {!!controls.history?.length && (
-        <Fragment>
+        <Fragment key={"toolbar-history-block"}>
           {controls.history.map(c => controlsMap[c])}
           <Divider />
         </Fragment>
@@ -342,23 +342,23 @@ export const ToolbarPlugin: FC<IToolbarPluginProps> = ({
       {toolbarState.blockType === "code" ? (
         controlsMap.codeLanguages
       ) : (
-        <Fragment>
+        <Fragment key={"toolbar-formats-block"}>
           {!!controls.textFormat?.length && (
-            <Fragment>
+            <Fragment key={"toolbar-text-format-block"}>
               {controls.textFormat.map(c => controlsMap[c])}
               {!!controls.clear?.length && <Divider />}
             </Fragment>
           )}
 
           {!!controls.clear?.length && (
-            <Fragment>
+            <Fragment key={"toolbar-clear-format-block"}>
               {controls.clear.map(c => controlsMap[c])}
               {!!controls.viewFormat?.length && <Divider />}
             </Fragment>
           )}
 
           {canViewerSeeInsertDropdown && !!controls.viewFormat?.length && (
-            <Fragment>{controls.viewFormat.map(c => controlsMap[c])}</Fragment>
+            <Fragment key={"toolbar-view-format-block"}>{controls.viewFormat.map(c => controlsMap[c])}</Fragment>
           )}
         </Fragment>
       )}
