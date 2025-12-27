@@ -9,8 +9,8 @@ export default [
   {
     ignores: [
       "**/dist",
-      "./eslint.config.mjs"
-    ]
+      "eslint.config.mjs"
+    ],
   },
 
   {
@@ -21,6 +21,7 @@ export default [
       },
     },
   },
+
   ...typescriptRules,
   ...storybook.configs["flat/recommended"],
 ];
