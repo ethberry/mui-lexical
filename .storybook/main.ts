@@ -42,10 +42,6 @@ const config: StorybookConfig = {
       ],
     });
 
-    if (config.resolve) {
-      config.resolve.modules = [...(config.resolve.modules || []), "node_modules", "src"];
-    }
-
     return config;
   },
 };
