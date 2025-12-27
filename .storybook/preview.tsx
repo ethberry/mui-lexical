@@ -1,4 +1,4 @@
-import type { Decorator, Preview } from "@storybook/react";
+import type { Decorator, Preview } from "@storybook/react-webpack5";
 import { ThemeProvider, createTheme, CssBaseline, StyledEngineProvider } from "@mui/material";
 import { CacheProvider, Global } from "@emotion/react";
 import createCache from "@emotion/cache";
