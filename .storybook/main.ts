@@ -19,7 +19,7 @@ const config: StorybookConfig = {
       propFilter: prop => (prop.parent ? !prop.parent.fileName.includes("node_modules") : true),
     },
   },
-  webpackFinal: async config => {
+  webpackFinal: config => {
     if (config.module?.rules) {
       config.module.rules = config.module.rules.filter(rule => {
         if (rule && typeof rule === "object" && "test" in rule && rule.test instanceof RegExp) {

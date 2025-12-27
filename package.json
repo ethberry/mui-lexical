@@ -41,28 +41,28 @@
     "@babel/preset-react": "7.28.5",
     "@babel/preset-typescript": "7.28.5",
     "@ethberry/eslint-config": "5.0.9",
-    "@storybook/addon-links": "9.1.17",
+    "@storybook/addon-docs": "10.1.10",
+    "@storybook/addon-links": "10.1.10",
     "@storybook/addon-webpack5-compiler-babel": "4.0.0",
-    "@storybook/react-webpack5": "9.1.17",
+    "@storybook/react-webpack5": "10.1.10",
     "@svgr/webpack": "8.1.0",
     "@types/lodash-es": "4.17.12",
     "@types/node": "22.19.3",
     "@types/react": "19.2.7",
     "@types/react-dom": "19.2.3",
+    "eslint-plugin-storybook": "10.1.10",
     "husky": "9.1.7",
     "lint-staged": "16.2.7",
     "prettier": "3.7.4",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "rimraf": "6.1.2",
-    "storybook": "9.1.17",
+    "storybook": "10.1.10",
     "typescript": "5.9.3",
-    "webpack": "5.104.0",
-    "eslint-plugin-storybook": "9.1.17",
-    "@storybook/addon-docs": "9.1.17"
+    "webpack": "5.104.0"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=22"
   },
   "homepage": "https://github.com/ethberry/mui-lexical#readme",
   "keywords": [
@@ -94,12 +94,11 @@
   },
   "scripts": {
     "build": "tsc",
+    "build-storybook": "storybook build",
     "lint": "eslint . --fix",
     "prebuild": "rimraf dist/",
     "prepare": "husky",
-    "storybook": "storybook dev -p 6006 --debug-webpack",
-    "build-storybook": "storybook build",
-    "test": "jest"
+    "storybook": "storybook dev -p 6006 --debug-webpack"
   },
   "types": "./dist/index.d.ts",
   "version": "1.0.26"

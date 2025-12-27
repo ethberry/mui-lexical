@@ -240,6 +240,7 @@ function getDragImageData(event: DragEvent): null | InsertImagePayload {
 }
 
 declare global {
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   interface DragEvent {
     rangeOffset?: number;
     rangeParent?: Node;
