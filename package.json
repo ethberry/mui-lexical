@@ -32,12 +32,12 @@
     "@mui/icons-material": "7.3.7",
     "@mui/material": "7.3.7",
     "lexical": "0.40.0",
-    "lodash-es": "4.17.22",
+    "lodash-es": "4.17.23",
     "mdi-material-ui": "7.9.4"
   },
   "description": "Material-UI Lexical Editor and Viewer",
   "devDependencies": {
-    "@babel/preset-env": "7.28.5",
+    "@babel/preset-env": "7.29.0",
     "@babel/preset-react": "7.28.5",
     "@babel/preset-typescript": "7.28.5",
     "@ethberry/eslint-config": "5.0.9",
@@ -47,19 +47,19 @@
     "@storybook/react-webpack5": "10.2.8",
     "@svgr/webpack": "8.1.0",
     "@types/lodash-es": "4.17.12",
-    "@types/node": "22.19.3",
-    "@types/react": "19.2.7",
+    "@types/node": "22.19.11",
+    "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
-    "eslint-plugin-storybook": "10.1.10",
+    "eslint-plugin-storybook": "10.2.8",
     "husky": "9.1.7",
     "lint-staged": "16.2.7",
-    "prettier": "3.7.4",
-    "react": "19.2.3",
-    "react-dom": "19.2.3",
+    "prettier": "3.8.1",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
     "rimraf": "6.1.2",
     "storybook": "10.2.8",
     "typescript": "5.9.3",
-    "webpack": "5.104.0"
+    "webpack": "5.105.1"
   },
   "engines": {
     "node": ">=22"
