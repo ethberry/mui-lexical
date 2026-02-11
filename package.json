@@ -101,5 +101,5 @@
     "storybook": "storybook dev -p 6006"
   },
   "types": "./dist/index.d.ts",
-  "version": "1.0.26"
+  "version": "1.0.27"
 }
