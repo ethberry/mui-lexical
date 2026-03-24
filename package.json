@@ -29,8 +29,8 @@
     "@lexical/selection": "0.40.0",
     "@lexical/table": "0.40.0",
     "@lexical/utils": "0.40.0",
-    "@mui/icons-material": "7.3.7",
-    "@mui/material": "7.3.7",
+    "@mui/icons-material": "7.3.9",
+    "@mui/material": "7.3.9",
     "lexical": "0.40.0",
     "lodash-es": "4.17.23",
     "mdi-material-ui": "7.9.4"
