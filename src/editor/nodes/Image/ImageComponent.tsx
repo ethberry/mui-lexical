@@ -36,6 +36,8 @@ export const RIGHT_CLICK_IMAGE_COMMAND: LexicalCommand<MouseEvent> = createComma
 
 const useSuspenseImage = (src: string) => {
   if (!imageCache.has(src)) {
+    // React Suspense: throw a pending Promise until the image loads.
+    // eslint-disable-next-line @typescript-eslint/only-throw-error -- not an Error; Suspense contract
     throw new Promise(resolve => {
       const img = new Image();
       img.src = src;

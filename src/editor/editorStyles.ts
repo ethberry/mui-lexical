@@ -34,7 +34,7 @@ export const editorStyles = css`
     min-height: 150px;
     max-width: 100%;
     border: 0;
-    display: flex;
+    display: block;
     position: relative;
     outline: 0;
     z-index: 0;
@@ -42,7 +42,6 @@ export const editorStyles = css`
   }
 
   .editor {
-    flex: auto;
     max-width: 100%;
     position: relative;
     resize: vertical;

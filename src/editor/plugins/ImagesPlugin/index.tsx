@@ -231,12 +231,24 @@ function getDragImageData(event: DragEvent): null | InsertImagePayload {
   if (!dragData) {
     return null;
   }
-  const { type, data } = JSON.parse(dragData);
-  if (type !== "image") {
+  let parsed: unknown;
+  try {
+    parsed = JSON.parse(dragData) as unknown;
+  } catch {
     return null;
   }
-
-  return data;
+  if (typeof parsed !== "object" || parsed === null) {
+    return null;
+  }
+  const { type, data } = parsed as { type?: unknown; data?: unknown };
+  if (type !== "image" || typeof data !== "object" || data === null) {
+    return null;
+  }
+  const payload = data as InsertImagePayload;
+  if (typeof payload.src !== "string") {
+    return null;
+  }
+  return payload;
 }
 
 declare global {

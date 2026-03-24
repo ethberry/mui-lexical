@@ -120,7 +120,9 @@ export const PrettierButton = ({ lang, editor, getCodeDOMNode }: IPrettierButton
     <div className="prettier-wrapper">
       <button
         className="menu-item"
-        onClick={handleClick}
+        onClick={() => {
+          void handleClick();
+        }}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         aria-label="prettier"

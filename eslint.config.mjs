@@ -9,7 +9,10 @@ export default [
   {
     ignores: [
       "**/dist",
-      "eslint.config.mjs"
+      "**/storybook-static",
+      "eslint.config.mjs",
+      "jest.config.json",
+      "jest.setup.cjs",
     ],
   },
 

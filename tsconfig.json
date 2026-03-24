@@ -23,5 +23,5 @@
     "strictPropertyInitialization": false,
     "target": "ES2022"
   },
-  "exclude": ["node_modules", "dist", ".storybook"]
+  "exclude": ["node_modules", "dist", ".storybook", "**/*.test.ts", "**/*.test.tsx"]
 }

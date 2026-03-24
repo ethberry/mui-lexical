@@ -195,9 +195,7 @@ function TableActionMenu({
 
       const newStyle = tableCellNode.getHeaderStyles() ^ TableCellHeaderStates.ROW;
 
-      for (let col = 0; col < gridMap[tableRowIndex].length; col++) {
-        const mapCell = gridMap[tableRowIndex][col];
-
+      for (const mapCell of gridMap[tableRowIndex]) {
         if (!mapCell?.cell) {
           continue;
         }

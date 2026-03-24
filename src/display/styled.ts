@@ -5,8 +5,8 @@ export const StyledEditorWrapper = styled(Box)(({ theme }) => {
   return {
     position: "relative",
     flex: 1,
-    display: "flex",
-    flexDirection: "column",
+    // Block layout: Lexical warns when contenteditable sits under display:flex (focus quirks in Chrome).
+    display: "block",
     // Custom scrollbar
     "&::-webkit-scrollbar": {
       width: "8px",
