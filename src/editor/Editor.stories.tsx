@@ -13,7 +13,7 @@ const meta: Meta<typeof Editor> = {
     docs: {
       description: {
         component:
-          "Full-featured Lexical Editor with all plugins enabled. Includes toolbar, markdown shortcuts, code highlighting, tables, images, videos, and more.",
+          "Full-featured Lexical Editor with all plugins enabled. Includes toolbar, markdown shortcuts, code highlighting, tables, images, videos, node context menu (right-click), and more.",
       },
     },
   },

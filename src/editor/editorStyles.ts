@@ -212,6 +212,75 @@ export const editorStyles = css`
     background-position: center;
   }
 
+  /* Lexical 0.42+ NodeContextMenuPlugin: menu items are <button role="menuitem">, not ul/li */
+  .lexical-node-context-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 4px 0;
+    min-width: 220px;
+    max-height: 280px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    z-index: 1301;
+  }
+
+  .lexical-node-context-menu__item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-shrink: 0;
+    /* width 100% + horizontal margin overflows the flex column and can clip labels */
+    box-sizing: border-box;
+    width: calc(100% - 16px);
+    max-width: calc(100% - 16px);
+    margin: 0 8px;
+    padding: 8px;
+    border: 0;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #050505;
+    -webkit-text-fill-color: #050505;
+    font-size: 15px;
+    line-height: 20px;
+    text-align: left;
+    cursor: pointer;
+    font-family: inherit;
+    justify-content: flex-start;
+    gap: 8px;
+    min-height: 36px;
+  }
+
+  .lexical-node-context-menu__item:first-of-type {
+    border-radius: 8px 8px 0 0;
+  }
+
+  .lexical-node-context-menu__item:last-of-type {
+    border-radius: 0 0 8px 8px;
+  }
+
+  .lexical-node-context-menu__item:only-of-type {
+    border-radius: 8px;
+  }
+
+  .lexical-node-context-menu__item:hover:not(:disabled),
+  .lexical-node-context-menu__item:focus-visible:not(:disabled) {
+    background-color: #eee;
+    outline: none;
+  }
+
+  .lexical-node-context-menu__item:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .lexical-node-context-menu hr {
+    margin: 4px 8px;
+    border: 0;
+    border-top: 1px solid #e0e0e0;
+  }
+
   .component-picker-menu {
     width: 200px;
   }
