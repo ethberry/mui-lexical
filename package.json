@@ -70,6 +70,13 @@
   "engines": {
     "node": ">=22"
   },
+  "exports": {
+    ".": {
+      "default": "./dist/index.js",
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "homepage": "https://github.com/ethberry/mui-lexical#readme",
   "keywords": [
     "material-ui",
@@ -107,6 +114,7 @@
     "storybook": "storybook dev -p 6006",
     "test": "jest"
   },
+  "type": "module",
   "types": "./dist/index.d.ts",
   "version": "1.0.28"
 }
