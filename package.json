@@ -68,7 +68,7 @@
     "webpack": "5.105.4"
   },
   "engines": {
-    "node": ">=22"
+    "node": ">=24"
   },
   "exports": {
     ".": {
