@@ -16,17 +16,6 @@ jobs:
         with:
           node-version: "24.x"
 
-      - name: Authenticate Registry for install
-        run: |
-          echo "@ethberry:registry=https://npm.pkg.github.com/" >> .npmrc
-          echo "//npm.pkg.github.com/:_authToken=$GITHUBTOKEN" >> .npmrc
-          git update-index --assume-unchanged .npmrc
-          npx npm-cli-login -u $GITHUBUSER -p $GITHUBTOKEN -e $GITHUBEMAIL -r https://npm.pkg.github.com -s @ethberry --config-path="./"
-        env:
-          GITHUBTOKEN: ${{ secrets.GITHUBTOKEN }}
-          GITHUBUSER: ${{ secrets.GITHUBUSER }}
-          GITHUBEMAIL: ${{ secrets.GITHUBEMAIL }}
-
       - name: Install Packages npm i
         run: npm i
 
@@ -53,9 +42,7 @@ jobs:
         run: npm whoami --registry=https://npm.pkg.github.com/
 
       - name: Version by NPM
-        run: |
-          git update-index --assume-unchanged .npmrc package-lock.json
-          npm version patch -m "[Manual release] [skip ci] %s"
+        run: npm version patch -m "[Manual release] [skip ci] %s"
 
       - name: Publish to GitHub Packages
         run: npm publish
@@ -87,4 +74,3 @@ jobs:
         run: git push --no-verify && git push --tags --no-verify
         env:
           GITHUBTOKEN: ${{ secrets.GITHUBTOKEN }}
-
