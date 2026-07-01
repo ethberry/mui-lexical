@@ -37,7 +37,7 @@
   },
   "description": "Material-UI Lexical Editor and Viewer",
   "devDependencies": {
-    "@ethberry/eslint-config": "5.0.9",
+    "@ethberry/eslint-config": "5.0.13",
     "@storybook/addon-docs": "10.4.6",
     "@storybook/addon-links": "10.4.6",
     "@storybook/addon-webpack5-compiler-swc": "4.0.3",
