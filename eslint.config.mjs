@@ -23,6 +23,13 @@ export default [
         tsconfigRootDir: import.meta.dirname,
       },
     },
+    settings: {
+      "import/resolver": {
+        typescript: {
+          project: ["./tsconfig.eslint.json"],
+        },
+      },
+    },
   },
 
   ...typescriptRules,
