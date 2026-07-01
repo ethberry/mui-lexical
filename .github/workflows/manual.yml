@@ -58,7 +58,9 @@ jobs:
         run: npm whoami --registry=https://npm.pkg.github.com/
 
       - name: Version by NPM
-        run: npm version patch -m "[Manual release] [skip ci] %s"
+        run: |
+          git update-index --assume-unchanged .npmrc package-lock.json
+          npm version patch -m "[Manual release] [skip ci] %s"
 
       - name: Publish to GitHub Packages
         run: npm publish
