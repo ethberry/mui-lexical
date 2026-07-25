@@ -29,8 +29,8 @@
     "@lexical/selection": "0.48.0",
     "@lexical/table": "0.48.0",
     "@lexical/utils": "0.48.0",
-    "@mui/icons-material": "^7.0.0",
-    "@mui/material": "^7.0.0",
+    "@mui/icons-material": "^9.0.0",
+    "@mui/material": "^9.0.0",
     "lexical": "0.48.0",
     "lodash-es": "4.18.1",
     "mdi-material-ui": "8.0.0"
@@ -93,7 +93,7 @@
   "peerDependencies": {
     "@mui/icons-material": "^7.0.0",
     "@mui/material": "^7.0.0",
-    "@mui/system": "^7.0.0",
+    "@mui/system": "^7.0.0 || ^9.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
