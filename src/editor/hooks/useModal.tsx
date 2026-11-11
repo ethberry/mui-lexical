@@ -1,7 +1,7 @@
 import type { JSX } from "react";
 import { useCallback, useMemo, useState } from "react";
 
-import { Modal } from "../ui";
+import { Modal } from "../ui/index.js";
 
 export const useModal = (): [
   JSX.Element | null,

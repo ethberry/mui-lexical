@@ -26,8 +26,8 @@ import { $findMatchingParent, mergeRegister } from "@lexical/utils";
 import { $getNearestNodeFromDOMNode, EditorThemeClasses, isHTMLElement, NodeKey } from "lexical";
 import { createPortal } from "react-dom";
 
-import { getThemeSelector } from "../../utils/getThemeSelector";
-import { useDebounce } from "../CodeActionMenuPlugin/utils";
+import { getThemeSelector } from "../../utils/getThemeSelector.js";
+import { useDebounce } from "../CodeActionMenuPlugin/utils.js";
 
 const BUTTON_WIDTH_PX = 20;
 

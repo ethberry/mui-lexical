@@ -6,9 +6,9 @@ import { LexicalErrorBoundary } from "@lexical/react/LexicalErrorBoundary";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import { ClickableLinkPlugin } from "@lexical/react/LexicalClickableLinkPlugin";
 
-import { playgroundEditorTheme } from "../editor/themes/playgroundEditorTheme";
-import { MuiLexicalNodes } from "../editor/nodes";
-import { StyledEditorWrapper } from "./styled";
+import { playgroundEditorTheme } from "../editor/themes/playgroundEditorTheme.js";
+import { MuiLexicalNodes } from "../editor/nodes/index.js";
+import { StyledEditorWrapper } from "./styled.js";
 
 export interface IDisplayProps {
   data?: string;

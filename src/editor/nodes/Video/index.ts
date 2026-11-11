@@ -1,3 +1,3 @@
-export { VideoComponent } from "./VideoComponent";
-export { VideoNode } from "./VideoNode";
-export { videoNodeStyles } from "./videoNodeStyles";
+export { VideoComponent } from "./VideoComponent.js";
+export { VideoNode } from "./VideoNode.js";
+export { videoNodeStyles } from "./videoNodeStyles.js";

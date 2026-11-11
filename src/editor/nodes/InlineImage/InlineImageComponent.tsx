@@ -22,11 +22,11 @@ import { useLexicalEditable } from "@lexical/react/useLexicalEditable";
 import { useLexicalNodeSelection } from "@lexical/react/useLexicalNodeSelection";
 import { mergeRegister } from "@lexical/utils";
 
-import type { Position } from "./InlineImageNode";
-import { $isInlineImageNode } from "./InlineImageNode";
-import { useModal } from "../../hooks";
-import { LinkPlugin } from "../../plugins";
-import { Button, DialogActions, Select, TextInput, LexicalContentEditable as ContentEditable } from "../../ui";
+import type { Position } from "./InlineImageNode.js";
+import { $isInlineImageNode } from "./InlineImageNode.js";
+import { useModal } from "../../hooks/index.js";
+import { LinkPlugin } from "../../plugins/index.js";
+import { Button, DialogActions, Select, TextInput, LexicalContentEditable as ContentEditable } from "../../ui/index.js";
 
 const imageCache = new Set();
 

@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 import { INSERT_HORIZONTAL_RULE_COMMAND } from "@lexical/react/LexicalHorizontalRuleNode";
 
-import { IToolbarComponentProps } from "../../../common";
-import { HorizontalRuleIcon } from "../../images/icons";
+import { IToolbarComponentProps } from "../../../common/index.js";
+import { HorizontalRuleIcon } from "../../images/icons/index.js";
 
 export const HorizontalRuleButton: FC<IToolbarComponentProps> = ({ activeEditor }) => {
   return (

@@ -1,10 +1,10 @@
 import React from "react";
 import { CODE_LANGUAGE_FRIENDLY_NAME_MAP, getLanguageFriendlyName } from "@lexical/code-prism";
 
-import { DropDown, DropDownItem } from "../DropDown";
-import { dropDownActiveClass } from "../../utils";
-import { ToolbarState } from "../../context";
-import { TToolbarCodeLanguagesControl } from "../../types";
+import { DropDown, DropDownItem } from "../DropDown.js";
+import { dropDownActiveClass } from "../../utils/index.js";
+import { ToolbarState } from "../../context/index.js";
+import { TToolbarCodeLanguagesControl } from "../../types/index.js";
 
 function getCodeLanguageOptions(): [string, string][] {
   const options: [string, string][] = [];

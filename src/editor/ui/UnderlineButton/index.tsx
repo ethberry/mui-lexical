@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 import { FORMAT_TEXT_COMMAND } from "lexical";
 
-import { SHORTCUTS } from "../../plugins/ShortcutsPlugin/shortcuts";
-import { IToolbarComponentProps } from "../../../common";
-import { TypeUnderlineIcon } from "../../images/icons";
+import { SHORTCUTS } from "../../plugins/ShortcutsPlugin/shortcuts.js";
+import { IToolbarComponentProps } from "../../../common/index.js";
+import { TypeUnderlineIcon } from "../../images/icons/index.js";
 
 interface IUnderlineButtonProps extends IToolbarComponentProps {
   isUnderline: boolean;

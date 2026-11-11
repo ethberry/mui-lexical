@@ -10,7 +10,7 @@ import { $getNearestNodeFromDOMNode, $getSelection, $setSelection, LexicalEditor
 import { useState } from "react";
 import { Button } from "@mui/material";
 
-import { useDebounce } from "../../utils";
+import { useDebounce } from "../../utils.js";
 
 interface ICopyButtonProps {
   editor: LexicalEditor;

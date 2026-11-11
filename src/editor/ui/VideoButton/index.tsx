@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 
-import { IToolbarComponentProps } from "../../../common";
-import { InsertVideoDialog } from "../../plugins";
-import { useModal } from "../../hooks";
-import { YoutubeIcon } from "../../images/icons";
+import { IToolbarComponentProps } from "../../../common/index.js";
+import { InsertVideoDialog } from "../../plugins/index.js";
+import { useModal } from "../../hooks/index.js";
+import { YoutubeIcon } from "../../images/icons/index.js";
 
 interface IVideoButtonProps extends Omit<IToolbarComponentProps, "disabled"> {
   showModal: ReturnType<typeof useModal>[1];

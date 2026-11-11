@@ -24,11 +24,11 @@ import { useLexicalEditable } from "@lexical/react/useLexicalEditable";
 import { useLexicalNodeSelection } from "@lexical/react/useLexicalNodeSelection";
 import { mergeRegister } from "@lexical/utils";
 
-import { useSharedHistoryContext } from "../../context";
-import { LinkPlugin } from "../../plugins";
-import { LexicalContentEditable as ContentEditable, ImageResizer } from "../../ui";
-import { $isImageNode } from "./ImageNode";
-import { ImageBrokenIcon } from "../../images/image-broken";
+import { useSharedHistoryContext } from "../../context/index.js";
+import { LinkPlugin } from "../../plugins/index.js";
+import { LexicalContentEditable as ContentEditable, ImageResizer } from "../../ui/index.js";
+import { $isImageNode } from "./ImageNode.js";
+import { ImageBrokenIcon } from "../../images/image-broken.js";
 
 const imageCache = new Set();
 

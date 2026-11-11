@@ -1,19 +1,11 @@
 import { ReactElement } from "react";
 import { CODE_LANGUAGE_FRIENDLY_NAME_MAP } from "@lexical/code-prism";
 
-import { blockTypeToBlockName } from "../context";
+import { blockTypeToBlockName } from "../context/index.js";
 
 export type TToolbarHistoryControl = "undo" | "redo";
 export type TToolbarTextFormatControl =
-  | "bold"
-  | "italic"
-  | "underline"
-  | "strikethrough"
-  | "code"
-  | "link"
-  | "leftAlign"
-  | "centerAlign"
-  | "rightAlign";
+  "bold" | "italic" | "underline" | "strikethrough" | "code" | "link" | "leftAlign" | "centerAlign" | "rightAlign";
 export type TToolbarViewFormatControl = "horizontal" | "image" | "video" | "table";
 export type TToolbarClearControl = "formatting" | "editor";
 export type TToolbarBlockFormatControl = keyof typeof blockTypeToBlockName;

@@ -29,8 +29,8 @@ import {
   SELECTION_CHANGE_COMMAND,
 } from "lexical";
 
-import { blockTypeToBlockName, useToolbarState } from "../../context";
-import { useModal } from "../../hooks";
+import { blockTypeToBlockName, useToolbarState } from "../../context/index.js";
+import { useModal } from "../../hooks/index.js";
 import {
   BlockFormatDropDown,
   BoldButton,
@@ -52,11 +52,11 @@ import {
   LeftAlignButton,
   CenterAlignButton,
   ClearEditorButton,
-} from "../../ui";
-import { getSelectedNode, sanitizeUrl } from "../../utils";
-import { IControlsMap, IToolbarControls } from "../../types";
-import { toolbarDefaultControls } from "../../constants";
-import { clearEditor, clearFormatting } from "./utils";
+} from "../../ui/index.js";
+import { getSelectedNode, sanitizeUrl } from "../../utils/index.js";
+import { IControlsMap, IToolbarControls } from "../../types/index.js";
+import { toolbarDefaultControls } from "../../constants/index.js";
+import { clearEditor, clearFormatting } from "./utils.js";
 
 interface IToolbarPluginProps {
   editor: LexicalEditor;

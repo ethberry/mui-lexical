@@ -41,8 +41,8 @@ import {
 import { mergeRegister } from "@lexical/utils";
 import { createPortal } from "react-dom";
 
-import { DropDown, DropDownItem } from "../../ui/DropDown";
-import { VerticalBottomIcon, VerticalMiddleIcon, VerticalTopIcon } from "../../images/icons";
+import { DropDown, DropDownItem } from "../../ui/DropDown.js";
+import { VerticalBottomIcon, VerticalMiddleIcon, VerticalTopIcon } from "../../images/icons/index.js";
 
 type TableCellActionMenuProps = Readonly<{
   contextRef: { current: null | HTMLElement };

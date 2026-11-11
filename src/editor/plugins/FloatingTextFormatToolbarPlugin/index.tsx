@@ -23,7 +23,7 @@ import {
 } from "lexical";
 import { createPortal } from "react-dom";
 
-import { getDOMRangeRect, getSelectedNode, setFloatingElemPosition } from "../../utils";
+import { getDOMRangeRect, getSelectedNode, setFloatingElemPosition } from "../../utils/index.js";
 import {
   BoldButton,
   CenterAlignButton,
@@ -34,9 +34,9 @@ import {
   RightAlignButton,
   StrikethroughButton,
   UnderlineButton,
-} from "../../ui";
-import { IControlsMap, TToolbarTextFormatControl } from "../../types";
-import { toolbarDefaultControls } from "../../constants";
+} from "../../ui/index.js";
+import { IControlsMap, TToolbarTextFormatControl } from "../../types/index.js";
+import { toolbarDefaultControls } from "../../constants/index.js";
 
 function TextFormatFloatingToolbar({
   editor,
@@ -333,4 +333,4 @@ export const FloatingTextFormatToolbarPlugin = ({
   return useFloatingTextFormatToolbar(editor, anchorElem, setIsLinkEditMode, controls);
 };
 
-export { floatTextFormatToolbarPluginStyles } from "./floatTextFormatToolbarPluginStyles";
+export { floatTextFormatToolbarPluginStyles } from "./floatTextFormatToolbarPluginStyles.js";

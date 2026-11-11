@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 import { FORMAT_ELEMENT_COMMAND } from "lexical";
 
-import { SHORTCUTS } from "../../plugins/ShortcutsPlugin/shortcuts";
-import { IToolbarComponentProps } from "../../../common";
-import { TextRightIcon } from "../../images/icons";
+import { SHORTCUTS } from "../../plugins/ShortcutsPlugin/shortcuts.js";
+import { IToolbarComponentProps } from "../../../common/index.js";
+import { TextRightIcon } from "../../images/icons/index.js";
 
 interface IRightAlignButtonProps extends IToolbarComponentProps {
   isRightAlign: boolean;

@@ -7,9 +7,9 @@ import { HorizontalRuleNode } from "@lexical/react/LexicalHorizontalRuleNode";
 import { HeadingNode, QuoteNode } from "@lexical/rich-text";
 import { TableCellNode, TableNode, TableRowNode } from "@lexical/table";
 
-import { ImageNode } from "./Image";
-import { InlineImageNode } from "./InlineImage";
-import { VideoNode } from "./Video";
+import { ImageNode } from "./Image/index.js";
+import { InlineImageNode } from "./InlineImage/index.js";
+import { VideoNode } from "./Video/index.js";
 
 export const MuiLexicalNodes: Array<Klass<LexicalNode>> = [
   HeadingNode,

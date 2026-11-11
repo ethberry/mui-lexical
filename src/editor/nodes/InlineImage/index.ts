@@ -1,3 +1,3 @@
-export { UpdateInlineImageDialog } from "./InlineImageComponent";
-export { InlineImageNode } from "./InlineImageNode";
-export { inlineImageNodeStyles } from "./inlineImageNodeStyles";
+export { UpdateInlineImageDialog } from "./InlineImageComponent.js";
+export { InlineImageNode } from "./InlineImageNode.js";
+export { inlineImageNodeStyles } from "./inlineImageNodeStyles.js";

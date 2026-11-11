@@ -29,9 +29,9 @@ import {
 } from "lexical";
 import * as ReactDOM from "react-dom";
 
-import { useModal } from "../../hooks";
-import { InsertImageDialog } from "../ImagesPlugin";
-import { InsertTableDialog } from "../TablePlugin";
+import { useModal } from "../../hooks/index.js";
+import { InsertImageDialog } from "../ImagesPlugin/index.js";
+import { InsertTableDialog } from "../TablePlugin.js";
 import {
   ChatSquareQuoteIcon,
   CodeIcon,
@@ -42,7 +42,7 @@ import {
   SquareCheckIcon,
   TableIcon,
   TextParagraphIcon,
-} from "../../images/icons";
+} from "../../images/icons/index.js";
 
 class ComponentPickerOption extends MenuOption {
   // What shows up in the editor

@@ -1,8 +1,8 @@
 import { LexicalEditor } from "lexical";
 import React, { JSX, useMemo } from "react";
 
-import { blockTypeToBlockName } from "../../context";
-import { DropDown, DropDownItem } from "../DropDown";
+import { blockTypeToBlockName } from "../../context/index.js";
+import { DropDown, DropDownItem } from "../DropDown.js";
 import {
   formatBulletList,
   formatCheckList,
@@ -11,9 +11,9 @@ import {
   formatNumberedList,
   formatParagraph,
   formatQuote,
-} from "../../plugins/ToolbarPlugin/utils";
-import { SHORTCUTS } from "../../plugins/ShortcutsPlugin/shortcuts";
-import { dropDownActiveClass } from "../../utils";
+} from "../../plugins/ToolbarPlugin/utils.js";
+import { SHORTCUTS } from "../../plugins/ShortcutsPlugin/shortcuts.js";
+import { dropDownActiveClass } from "../../utils/index.js";
 import {
   ChatSquareQuoteIcon,
   CodeIcon,
@@ -27,8 +27,8 @@ import {
   TypeH4Icon,
   TypeH5Icon,
   TypeH6Icon,
-} from "../../images/icons";
-import { TToolbarBlockFormatControl } from "../../types";
+} from "../../images/icons/index.js";
+import { TToolbarBlockFormatControl } from "../../types/index.js";
 
 export type BlockType = keyof typeof blockTypeToBlockName;
 

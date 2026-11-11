@@ -15,7 +15,7 @@ import { $applyNodeReplacement, createEditor, DecoratorNode, isHTMLElement } fro
 import type { JSX } from "react";
 import { addClassNamesToElement, removeClassNamesFromElement } from "@lexical/utils";
 
-import { InlineImageComponent } from "./InlineImageComponent";
+import { InlineImageComponent } from "./InlineImageComponent.js";
 
 export type Position = "left" | "right" | "full" | undefined;
 
