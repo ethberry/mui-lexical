@@ -1,4 +1,4 @@
-import { IToolbarControls } from "../types";
+import { IToolbarControls } from "../types/index.js";
 
 export const toolbarDefaultControls: IToolbarControls = {
   history: ["undo", "redo"],

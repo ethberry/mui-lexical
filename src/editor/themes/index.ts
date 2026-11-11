@@ -1,1 +1,1 @@
-export { playgroundEditorThemeStyles } from "./playgroundEditorThemeStyles";
+export { playgroundEditorThemeStyles } from "./playgroundEditorThemeStyles.js";

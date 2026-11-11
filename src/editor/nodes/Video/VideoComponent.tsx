@@ -1,4 +1,4 @@
-import { VideoProvider } from "../../utils/parseVideoUrl";
+import { VideoProvider } from "../../utils/parseVideoUrl.js";
 
 export interface IVideoNodeProps {
   provider: VideoProvider;
@@ -10,12 +10,7 @@ export interface IVideoNodeProps {
 
 export const VideoComponent = (props: IVideoNodeProps) => {
   const { provider } = props;
-  const title =
-    provider === "youtube"
-      ? "YouTube video"
-      : provider === "vimeo"
-        ? "Vimeo video"
-        : "Video";
+  const title = provider === "youtube" ? "YouTube video" : provider === "vimeo" ? "Vimeo video" : "Video";
 
   return (
     <div className="lexical-video" contentEditable={false} draggable={false}>

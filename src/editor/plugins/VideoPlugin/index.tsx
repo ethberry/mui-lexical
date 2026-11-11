@@ -10,12 +10,12 @@ import {
   type PasteCommandType,
 } from "lexical";
 
-import { INSERT_VIDEO_COMMAND } from "../../commands";
-import { parseVideoUrl } from "../../utils/parseVideoUrl";
-import { $createVideoNode } from "../../nodes/Video/VideoNode";
-import { DialogActions } from "../../ui/Dialog";
-import { Button } from "../../ui/Button";
-import { TextInput } from "../../ui/TextInput";
+import { INSERT_VIDEO_COMMAND } from "../../commands/index.js";
+import { parseVideoUrl } from "../../utils/parseVideoUrl.js";
+import { $createVideoNode } from "../../nodes/Video/VideoNode.js";
+import { DialogActions } from "../../ui/Dialog.js";
+import { Button } from "../../ui/Button.js";
+import { TextInput } from "../../ui/TextInput.js";
 
 export function InsertVideoDialog({
   activeEditor,

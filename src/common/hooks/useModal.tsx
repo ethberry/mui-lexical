@@ -1,6 +1,6 @@
 import { ReactNode, useCallback, useMemo, useState } from "react";
 
-import { ModalWrapper as Modal } from "../../components/ui/Modal";
+import { ModalWrapper as Modal } from "../../components/ui/Modal/index.js";
 
 export const useModal = () => {
   const [modalContent, setModalContent] = useState<{

@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 import { FORMAT_ELEMENT_COMMAND } from "lexical";
 
-import { SHORTCUTS } from "../../plugins/ShortcutsPlugin/shortcuts";
-import { IToolbarComponentProps } from "../../../common";
-import { TextCenterIcon } from "../../images/icons";
+import { SHORTCUTS } from "../../plugins/ShortcutsPlugin/shortcuts.js";
+import { IToolbarComponentProps } from "../../../common/index.js";
+import { TextCenterIcon } from "../../images/icons/index.js";
 
 interface ICenterAlignButtonProps extends IToolbarComponentProps {
   isCenterAlign: boolean;

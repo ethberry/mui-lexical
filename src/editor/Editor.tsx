@@ -16,7 +16,7 @@ import { LexicalComposer } from "@lexical/react/LexicalComposer";
 import { EditorState } from "lexical";
 import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin";
 
-import { SharedHistoryContext, ToolbarContext, useSharedHistoryContext } from "./context";
+import { SharedHistoryContext, ToolbarContext, useSharedHistoryContext } from "./context/index.js";
 import {
   CodeActionMenuPlugin,
   CodeHighlightPlugin,
@@ -32,11 +32,11 @@ import {
   TableHoverActionsPlugin,
   ToolbarPlugin,
   VideoPlugin,
-} from "./plugins";
-import { LexicalContentEditable as ContentEditable } from "./ui/ContentEditable";
-import { MuiLexicalNodes } from "./nodes";
-import { playgroundEditorTheme } from "./themes/playgroundEditorTheme";
-import { IToolbarControls } from "./types";
+} from "./plugins/index.js";
+import { LexicalContentEditable as ContentEditable } from "./ui/ContentEditable.js";
+import { MuiLexicalNodes } from "./nodes/index.js";
+import { playgroundEditorTheme } from "./themes/playgroundEditorTheme.js";
+import { IToolbarControls } from "./types/index.js";
 
 type TEditorContentProps = Omit<IEditorProps, "initialEditorState" | "readOnly">;
 

@@ -3,14 +3,14 @@ import {
   floatLinkEditorPluginStyles,
   floatTextFormatToolbarPluginStyles,
   tableCellResizerPluginStyles,
-} from "./editor/plugins";
-import { playgroundEditorThemeStyles } from "./editor/themes";
-import { editorStyles } from "./editor/editorStyles";
-import { componentsStyles } from "./editor/ui";
-import { imageNodeStyles, videoNodeStyles, inlineImageNodeStyles } from "./editor/nodes";
+} from "./editor/plugins/index.js";
+import { playgroundEditorThemeStyles } from "./editor/themes/index.js";
+import { editorStyles } from "./editor/editorStyles.js";
+import { componentsStyles } from "./editor/ui/index.js";
+import { imageNodeStyles, videoNodeStyles, inlineImageNodeStyles } from "./editor/nodes/index.js";
 
-export * from "./editor";
-export * from "./display";
+export * from "./editor/index.js";
+export * from "./display/index.js";
 export const muiLexicalStyles = [
   ...componentsStyles,
   editorStyles,

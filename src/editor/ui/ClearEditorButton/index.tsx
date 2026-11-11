@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 
-import { IToolbarComponentProps } from "../../../common";
-import { Trash3Icon } from "../../images/icons";
+import { IToolbarComponentProps } from "../../../common/index.js";
+import { Trash3Icon } from "../../images/icons/index.js";
 
 interface IClearButtonProp extends Omit<IToolbarComponentProps, "activeEditor"> {
   onClick: () => void;

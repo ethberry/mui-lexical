@@ -24,7 +24,7 @@ import type { JSX } from "react";
 import { HashtagNode } from "@lexical/hashtag";
 import { LinkNode } from "@lexical/link";
 
-import { ImageComponent } from "./ImageComponent";
+import { ImageComponent } from "./ImageComponent.js";
 
 export interface IImagePayload {
   altText: string;

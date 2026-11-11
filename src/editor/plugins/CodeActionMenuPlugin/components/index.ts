@@ -1,2 +1,2 @@
-export * from "./CopyButton";
-export * from "./PrettierButton";
+export * from "./CopyButton/index.js";
+export * from "./PrettierButton/index.js";

@@ -30,10 +30,10 @@ import {
   LexicalEditor,
 } from "lexical";
 
-import { $createImageNode, $isImageNode, ImageNode, IImagePayload } from "../../nodes/Image/ImageNode";
-import { Button } from "../../ui/Button";
-import { DialogActions } from "../../ui/Dialog";
-import { TextInput } from "../../ui/TextInput";
+import { $createImageNode, $isImageNode, ImageNode, IImagePayload } from "../../nodes/Image/ImageNode.js";
+import { Button } from "../../ui/Button.js";
+import { DialogActions } from "../../ui/Dialog.js";
+import { TextInput } from "../../ui/TextInput.js";
 
 export type InsertImagePayload = Readonly<IImagePayload>;
 

@@ -423,4 +423,4 @@ export const TableCellResizerPlugin = (): null | ReactPortal => {
   );
 };
 
-export { tableCellResizerPluginStyles } from "./tableCellResizerPluginStyles";
+export { tableCellResizerPluginStyles } from "./tableCellResizerPluginStyles.js";

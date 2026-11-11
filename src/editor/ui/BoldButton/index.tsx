@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 import { FORMAT_TEXT_COMMAND } from "lexical";
 
-import { SHORTCUTS } from "../../plugins/ShortcutsPlugin/shortcuts";
-import { IToolbarComponentProps } from "../../../common";
-import { TypeBoldIcon } from "../../images/icons";
+import { SHORTCUTS } from "../../plugins/ShortcutsPlugin/shortcuts.js";
+import { IToolbarComponentProps } from "../../../common/index.js";
+import { TypeBoldIcon } from "../../images/icons/index.js";
 
 interface IBoldButtonProps extends IToolbarComponentProps {
   isBold: boolean;

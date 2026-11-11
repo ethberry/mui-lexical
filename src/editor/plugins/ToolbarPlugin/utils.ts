@@ -7,7 +7,7 @@ import { $isTableSelection } from "@lexical/table";
 import { $getNearestBlockElementAncestorOrThrow } from "@lexical/utils";
 import { $createParagraphNode, $getRoot, $getSelection, $isRangeSelection, $isTextNode, LexicalEditor } from "lexical";
 
-import { MAX_ALLOWED_FONT_SIZE, MIN_ALLOWED_FONT_SIZE } from "../../context";
+import { MAX_ALLOWED_FONT_SIZE, MIN_ALLOWED_FONT_SIZE } from "../../context/index.js";
 
 export enum UpdateFontSizeType {
   increment = 1,

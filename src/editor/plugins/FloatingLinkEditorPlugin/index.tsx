@@ -26,10 +26,10 @@ import {
 } from "lexical";
 import { createPortal } from "react-dom";
 
-import { getSelectedNode } from "../../utils/getSelectedNode";
-import { setFloatingElemPositionForLinkEditor } from "../../utils/setFloatingElemPositionForLinkEditor";
-import { sanitizeUrl } from "../../utils/url";
-import { CloseIcon, PencilFillIcon, SuccessAltIcon, TrashIcon } from "../../images/icons";
+import { getSelectedNode } from "../../utils/getSelectedNode.js";
+import { setFloatingElemPositionForLinkEditor } from "../../utils/setFloatingElemPositionForLinkEditor.js";
+import { sanitizeUrl } from "../../utils/url.js";
+import { CloseIcon, PencilFillIcon, SuccessAltIcon, TrashIcon } from "../../images/icons/index.js";
 
 function preventDefault(event: KeyboardEvent<HTMLInputElement> | MouseEvent<HTMLElement>): void {
   event.preventDefault();
@@ -422,4 +422,4 @@ export const FloatingLinkEditorPlugin = ({
   return useFloatingLinkEditorToolbar(editor, anchorElem, isLinkEditMode, setIsLinkEditMode);
 };
 
-export { floatLinkEditorPluginStyles } from "./floatLinkEditorPluginStyles";
+export { floatLinkEditorPluginStyles } from "./floatLinkEditorPluginStyles.js";

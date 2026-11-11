@@ -2,8 +2,8 @@ import React, { FC } from "react";
 import { UNDO_COMMAND } from "lexical";
 import { IS_APPLE } from "@lexical/utils";
 
-import { IToolbarComponentProps } from "../../../common";
-import { ArrowCounterclockwiseIcon } from "../../images/icons";
+import { IToolbarComponentProps } from "../../../common/index.js";
+import { ArrowCounterclockwiseIcon } from "../../images/icons/index.js";
 
 export const UndoButton: FC<IToolbarComponentProps> = ({ activeEditor, disabled }) => {
   return (

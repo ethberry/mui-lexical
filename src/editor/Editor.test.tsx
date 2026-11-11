@@ -5,7 +5,7 @@ import React from "react";
 import { render, screen, waitFor } from "@testing-library/react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
-import { Editor } from "./Editor";
+import { Editor } from "./Editor.js";
 
 const theme = createTheme();
 

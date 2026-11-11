@@ -10,12 +10,8 @@ import {
 } from "lexical";
 import React from "react";
 
-import {
-  ParsedVideo,
-  parseVideoUrl,
-  VideoProvider,
-} from "../../utils/parseVideoUrl";
-import { IVideoNodeProps, VideoComponent } from "./VideoComponent";
+import { ParsedVideo, parseVideoUrl, VideoProvider } from "../../utils/parseVideoUrl.js";
+import { IVideoNodeProps, VideoComponent } from "./VideoComponent.js";
 
 export type SerializedVideoNode = Spread<
   {
@@ -64,8 +60,7 @@ export class VideoNode extends DecoratorNode<React.JSX.Element> {
   }
 
   static importJSON(serializedNode: SerializedVideoNode): VideoNode {
-    const { provider, videoId, embedUrl, startAt, originalUrl } =
-      serializedNode;
+    const { provider, videoId, embedUrl, startAt, originalUrl } = serializedNode;
     return new VideoNode({ provider, videoId, embedUrl, startAt, originalUrl });
   }
 
@@ -83,7 +78,7 @@ export class VideoNode extends DecoratorNode<React.JSX.Element> {
 
   static importDOM(): DOMConversionMap {
     return {
-      iframe: (domNode) => {
+      iframe: domNode => {
         const el = domNode as HTMLIFrameElement;
         if (!(el instanceof HTMLIFrameElement)) return null;
 
@@ -99,7 +94,7 @@ export class VideoNode extends DecoratorNode<React.JSX.Element> {
         };
       },
 
-      div: (domNode) => {
+      div: domNode => {
         const el = domNode as HTMLDivElement;
         if (!(el instanceof HTMLDivElement)) return null;
 

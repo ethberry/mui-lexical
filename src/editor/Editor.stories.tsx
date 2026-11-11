@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react-webpack5";
 import { useState } from "react";
 
-import { Editor, IEditorProps } from "./Editor";
-import { IToolbarControls } from "./types";
-import { Display } from "../display";
+import { Editor, IEditorProps } from "./Editor.js";
+import { IToolbarControls } from "./types/index.js";
+import { Display } from "../display/index.js";
 
 const meta: Meta<typeof Editor> = {
   title: "Editor/Editor",

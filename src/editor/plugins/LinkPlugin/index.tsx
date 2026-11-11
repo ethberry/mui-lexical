@@ -9,7 +9,7 @@
 import type { JSX } from "react";
 import { LinkPlugin as LexicalLinkPlugin } from "@lexical/react/LexicalLinkPlugin";
 
-import { validateUrl } from "../../utils/url";
+import { validateUrl } from "../../utils/url.js";
 
 export const LinkPlugin = (): JSX.Element => {
   return (

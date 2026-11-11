@@ -1,3 +1,3 @@
-export { ImageComponent } from "./ImageComponent";
-export { ImageNode } from "./ImageNode";
-export { imageNodeStyles } from "./imageNodeStyles";
+export { ImageComponent } from "./ImageComponent.js";
+export { ImageNode } from "./ImageNode.js";
+export { imageNodeStyles } from "./imageNodeStyles.js";

@@ -19,8 +19,8 @@ import {
 } from "lexical";
 import { Dispatch, useEffect } from "react";
 
-import { useToolbarState } from "../../context";
-import { sanitizeUrl } from "../../utils/url";
+import { useToolbarState } from "../../context/index.js";
+import { sanitizeUrl } from "../../utils/url.js";
 import {
   clearFormatting,
   formatBulletList,
@@ -30,7 +30,7 @@ import {
   formatNumberedList,
   formatParagraph,
   formatQuote,
-} from "../ToolbarPlugin/utils";
+} from "../ToolbarPlugin/utils.js";
 import {
   isCenterAlign,
   isClearFormatting,
@@ -49,7 +49,7 @@ import {
   isOutdent,
   isRightAlign,
   isStrikeThrough,
-} from "./shortcuts";
+} from "./shortcuts.js";
 
 export const ShortcutsPlugin = ({
   editor,

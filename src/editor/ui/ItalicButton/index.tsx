@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 import { FORMAT_TEXT_COMMAND } from "lexical";
 
-import { SHORTCUTS } from "../../plugins/ShortcutsPlugin/shortcuts";
-import { IToolbarComponentProps } from "../../../common";
-import { TypeItalicIcon } from "../../images/icons";
+import { SHORTCUTS } from "../../plugins/ShortcutsPlugin/shortcuts.js";
+import { IToolbarComponentProps } from "../../../common/index.js";
+import { TypeItalicIcon } from "../../images/icons/index.js";
 
 interface IItalicButtonProps extends IToolbarComponentProps {
   isItalic: boolean;

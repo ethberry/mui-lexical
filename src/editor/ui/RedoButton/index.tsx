@@ -2,8 +2,8 @@ import React, { FC } from "react";
 import { REDO_COMMAND } from "lexical";
 import { IS_APPLE } from "@lexical/utils";
 
-import { IToolbarComponentProps } from "../../../common";
-import { ArrowClockwiseIcon } from "../../images/icons";
+import { IToolbarComponentProps } from "../../../common/index.js";
+import { ArrowClockwiseIcon } from "../../images/icons/index.js";
 
 export const RedoButton: FC<IToolbarComponentProps> = ({ activeEditor, disabled }) => {
   return (

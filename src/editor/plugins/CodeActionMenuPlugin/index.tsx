@@ -13,10 +13,10 @@ import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext
 import { $getNearestNodeFromDOMNode, isHTMLElement } from "lexical";
 import { createPortal } from "react-dom";
 
-import { canBePrettier, CopyButton, PrettierButton } from "./components";
-import { useDebounce } from "./utils";
+import { canBePrettier, CopyButton, PrettierButton } from "./components/index.js";
+import { useDebounce } from "./utils.js";
 
-export { codeActionMenuPluginStyles } from "./codeActionMenuPluginStyles";
+export { codeActionMenuPluginStyles } from "./codeActionMenuPluginStyles.js";
 const CODE_PADDING = 8;
 
 interface IPosition {

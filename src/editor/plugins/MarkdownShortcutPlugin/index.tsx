@@ -9,7 +9,7 @@
 import type { JSX } from "react";
 import { MarkdownShortcutPlugin } from "@lexical/react/LexicalMarkdownShortcutPlugin";
 
-import { PLAYGROUND_TRANSFORMERS } from "../MarkdownTransformers";
+import { PLAYGROUND_TRANSFORMERS } from "../MarkdownTransformers/index.js";
 
 export const MarkdownPlugin = (): JSX.Element => {
   return <MarkdownShortcutPlugin transformers={PLAYGROUND_TRANSFORMERS} />;
