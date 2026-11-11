@@ -194,18 +194,18 @@ export const ImageComponent = ({
   const isEditable = useLexicalEditable();
 
   const $onEnter = useCallback(
-    (event: KeyboardEvent) => {
+    (event: KeyboardEvent | null) => {
       const latestSelection = $getSelection();
       const buttonElem = buttonRef.current;
       if (isSelected && $isNodeSelection(latestSelection) && latestSelection.getNodes().length === 1) {
         if (showCaption) {
           // Move focus into nested editor
           $setSelection(null);
-          event.preventDefault();
+          event?.preventDefault();
           caption.focus();
           return true;
         } else if (buttonElem !== null && buttonElem !== document.activeElement) {
-          event.preventDefault();
+          event?.preventDefault();
           buttonElem.focus();
           return true;
         }

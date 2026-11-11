@@ -7,7 +7,8 @@
  */
 
 import { type ReactPortal, useEffect, useRef, useState } from "react";
-import { $isCodeNode, CodeNode, getLanguageFriendlyName, normalizeCodeLang } from "@lexical/code";
+import { $isCodeNode, CodeNode } from "@lexical/code";
+import { getLanguageFriendlyName, normalizeCodeLanguage } from "@lexical/code-prism";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import { $getNearestNodeFromDOMNode, isHTMLElement } from "lexical";
 import { createPortal } from "react-dom";
@@ -121,7 +122,7 @@ function CodeActionMenuContainer({ anchorElem }: { anchorElem: HTMLElement }) {
     );
   }, [editor]);
 
-  const normalizedLang = normalizeCodeLang(lang);
+  const normalizedLang = normalizeCodeLanguage(lang);
   const codeFriendlyName = getLanguageFriendlyName(lang);
 
   if (!isShown) {

@@ -1,5 +1,5 @@
 import React from "react";
-import { CODE_LANGUAGE_FRIENDLY_NAME_MAP, getLanguageFriendlyName } from "@lexical/code";
+import { CODE_LANGUAGE_FRIENDLY_NAME_MAP, getLanguageFriendlyName } from "@lexical/code-prism";
 
 import { DropDown, DropDownItem } from "../DropDown";
 import { dropDownActiveClass } from "../../utils";

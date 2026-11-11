@@ -1,5 +1,5 @@
 import { useEffect, type JSX } from "react";
-import { registerCodeHighlighting } from "@lexical/code";
+import { registerCodeHighlighting } from "@lexical/code-prism";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 
 export const CodeHighlightPlugin = (): JSX.Element | null => {

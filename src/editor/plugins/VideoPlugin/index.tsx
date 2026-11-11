@@ -7,6 +7,7 @@ import {
   COMMAND_PRIORITY_LOW,
   LexicalEditor,
   PASTE_COMMAND,
+  type PasteCommandType,
 } from "lexical";
 
 import { INSERT_VIDEO_COMMAND } from "../../commands";
@@ -76,8 +77,8 @@ export const VideoPlugin = () => {
 
     const removePaste = editor.registerCommand(
       PASTE_COMMAND,
-      (event: ClipboardEvent) => {
-        const text = event.clipboardData?.getData("text/plain");
+      (event: PasteCommandType) => {
+        const text = "clipboardData" in event ? event.clipboardData?.getData("text/plain") : undefined;
         if (!text) return false;
 
         const parsed = parseVideoUrl(text);
