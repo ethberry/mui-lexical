@@ -7,7 +7,8 @@
  */
 
 import { FC, Fragment, JSX, Dispatch, useCallback, useEffect, useState } from "react";
-import { $isCodeNode, CODE_LANGUAGE_MAP } from "@lexical/code";
+import { $isCodeNode } from "@lexical/code";
+import { CODE_LANGUAGE_MAP } from "@lexical/code-prism";
 import { $isLinkNode, TOGGLE_LINK_COMMAND } from "@lexical/link";
 import { $isListNode, ListNode } from "@lexical/list";
 import { $isHeadingNode } from "@lexical/rich-text";

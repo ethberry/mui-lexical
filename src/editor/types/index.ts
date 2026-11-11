@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { CODE_LANGUAGE_FRIENDLY_NAME_MAP } from "@lexical/code";
+import { CODE_LANGUAGE_FRIENDLY_NAME_MAP } from "@lexical/code-prism";
 
 import { blockTypeToBlockName } from "../context";
 
