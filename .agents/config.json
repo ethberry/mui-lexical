@@ -1,0 +1,12 @@
+{
+  "stacks": [
+    "typescript",
+    "react",
+    "npm-workspaces",
+    "jest",
+    "storybook"
+  ],
+  "targets": [
+    "claude"
+  ]
+}
