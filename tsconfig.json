@@ -32,7 +32,15 @@
     "**/*.test.ts",
     "**/*.test.tsx",
     "**/*.stories.ts",
-    "**/*.stories.tsx"
+    "**/*.stories.tsx",
+    "**/*.spec.ts",
+    "**/*.spec.tsx",
+    "**/test-utils.ts",
+    "**/test-utils.tsx",
+    "**/test-globals.d.ts",
+    "**/jest.setup.ts",
+    "**/setup-jest.ts",
+    "**/__mocks__/**"
   ],
   "include": ["src/**/*.ts", "src/**/*.tsx"]
 }
