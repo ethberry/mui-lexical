@@ -23,7 +23,7 @@ paths:
 
 - The app creates one `QueryClient` at module level and provides it at the top of the tree. Packages never create their own; `@tanstack/react-query` is a peer dependency.
 - Reads are queries (`useApiQuery` / `useQuery`), writes are mutations (`useApiMutation` / `useMutation`). No `fetch` / `axios` in components and no "fetch in `useEffect` + `useState`" for server data.
-- Query keys are arrays that start with the resource and contain every input of the request: `["ecommerce/categories", search]`, `["ecommerce/categories", id]`. A request whose inputs are not in the key serves stale data.
+- Query keys are arrays that start with the resource and contain every input of the request: `["erc721/templates", search]`, `["erc721/templates", id]`. A request whose inputs are not in the key serves stale data.
 - After a mutation, refresh what it changed: `invalidateQueries` with the resource prefix, or `setQueryData` when the response is the new value. Do not refetch everything.
 - Data copied from a list into the item cache is marked stale (`setQueryData(key, row, { updatedAt: 0 })`), so the full item is still fetched.
 - Server data never goes into redux or component state; redux holds only UI state (theme, language, layout). A store or `QueryClient` is created once at module level, never inside a component.
@@ -32,20 +32,20 @@ paths:
 
 ```tsx
 // Bad: server data in component state, no cache, no cancellation
-const [rows, setRows] = useState<ICategory[]>([]);
+const [rows, setRows] = useState<ITemplate[]>([]);
 useEffect(() => {
-  void api.fetchJson({ url: "/ecommerce/categories" }).then(setRows);
+  void api.fetchJson({ url: "/erc721/templates" }).then(setRows);
 }, []);
 
 // Good
-const { data, isLoading } = useApiQuery(["ecommerce/categories", search], (api, signal) =>
-  api.fetchJson({ url: "/ecommerce/categories", data: search, signal }),
+const { data, isLoading } = useApiQuery(["erc721/templates", search], (api, signal) =>
+  api.fetchJson({ url: "/erc721/templates", data: search, signal }),
 );
 ```
 
 ## Forms
 
-- Forms are react-hook-form through the shared `FormWrapper` / `FormDialog`, with a zod schema (yup only in code that already uses it). The schema validates; `onSubmit` receives the values the inputs hold, not the schema's transformed output, and the API gets them as they are.
+- Forms are react-hook-form through the shared `FormWrapper` / `FormDialog`, with a zod schema. yup is not used any more: an existing yup schema is moved to zod when its form is touched, never extended. Rich text is Lexical (`@ethberry/mui-inputs-lexical`, `LexicalTextEditor`); draft-js is not used any more. The schema validates; `onSubmit` receives the values the inputs hold, not the schema's transformed output, and the API gets them as they are.
 - `initialValues` contain exactly the fields the form edits; an entity from a list carries relations and timestamps the API must not receive.
 - A value set by code that represents a user action uses `setValue(name, value, { shouldDirty: true, shouldValidate: true })`, otherwise the dialog's submit stays disabled. Lists of fields use `useFieldArray` with `field.id` as the key.
 - Read other fields with `useWatch({ name })` for exactly the fields needed, not the whole form — except components that react to any change by design (auto-save).
