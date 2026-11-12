@@ -25,3 +25,4 @@ tsconfig.jest.json
 .storybook
 .env
 .env.*
+/tsconfig.eslint.json
