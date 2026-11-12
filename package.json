@@ -111,7 +111,8 @@
     "prebuild": "rimraf dist/",
     "prepare": "husky",
     "storybook": "storybook dev -p 6006",
-    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest"
+    "test": "npm run typecheck && cross-env NODE_OPTIONS=--experimental-vm-modules jest",
+    "typecheck": "tsc -p tsconfig.test.json"
   },
   "type": "module",
   "types": "./dist/index.d.ts",
