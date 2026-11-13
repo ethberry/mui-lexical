@@ -30,7 +30,7 @@ describe("server render", () => {
 
     expect(result.stderr).not.toMatch(/ReferenceError|is not defined/);
     expect(result.status).toBe(0);
-    expect(result.stdout).toContain("contenteditable");
+    expect(result.stdout).toContain('role="textbox"');
   });
 
   it("renders a read-only editor without the toolbar", () => {
