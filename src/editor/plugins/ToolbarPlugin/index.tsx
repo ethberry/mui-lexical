@@ -101,9 +101,7 @@ export const ToolbarPlugin: FC<IToolbarPluginProps> = ({
                 return parent !== null && $isRootOrShadowRoot(parent);
               });
 
-        if (element === null) {
-          element = anchorNode.getTopLevelElementOrThrow();
-        }
+        element ??= anchorNode.getTopLevelElementOrThrow();
 
         const elementKey = element.getKey();
         const elementDOM = activeEditor.getElementByKey(elementKey);
@@ -151,6 +149,8 @@ export const ToolbarPlugin: FC<IToolbarPluginProps> = ({
           );
         }
 
+        // an empty format ("") of the parent means left
+        const parentFormat = parent?.getFormatType() ?? "";
         // If matchingParent is a valid node, pass it's format type
         updateToolbarState(
           "elementFormat",
@@ -158,12 +158,15 @@ export const ToolbarPlugin: FC<IToolbarPluginProps> = ({
             ? matchingParent.getFormatType()
             : $isElementNode(node)
               ? node.getFormatType()
-              : parent?.getFormatType() || "left",
+              : parentFormat === ""
+                ? "left"
+                : parentFormat,
         );
       }
       if ($isRangeSelection(selection) || $isTableSelection(selection)) {
         const anchorNode = selection.anchor.getNode();
-        const element = anchorNode.getTopLevelElementOrThrow();
+        // a selection on the root itself (keyboard focus of an empty editor) has no top-level element
+        const element = $isRootOrShadowRoot(anchorNode) ? null : anchorNode.getTopLevelElementOrThrow();
         // Update text format
         updateToolbarState("isBold", selection.hasFormat("bold"));
         updateToolbarState("isItalic", selection.hasFormat("italic"));
