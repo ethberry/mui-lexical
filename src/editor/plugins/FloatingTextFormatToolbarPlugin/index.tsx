@@ -15,6 +15,7 @@ import {
   $getSelection,
   $isParagraphNode,
   $isRangeSelection,
+  $isRootOrShadowRoot,
   $isTextNode,
   COMMAND_PRIORITY_LOW,
   getDOMSelection,
@@ -65,7 +66,7 @@ function TextFormatFloatingToolbar({
   isCenterAlign: boolean;
   isRightAlign: boolean;
   setIsLinkEditMode: Dispatch<boolean>;
-  controls?: Array<TToolbarTextFormatControl>;
+  controls?: TToolbarTextFormatControl[];
 }): JSX.Element {
   const popupCharStylesEditorRef = useRef<HTMLDivElement | null>(null);
 
@@ -206,7 +207,7 @@ function useFloatingTextFormatToolbar(
   editor: LexicalEditor,
   anchorElem: HTMLElement,
   setIsLinkEditMode: Dispatch<boolean>,
-  controls?: Array<TToolbarTextFormatControl>,
+  controls?: TToolbarTextFormatControl[],
 ): JSX.Element | null {
   const [isText, setIsText] = useState(false);
   const [isLink, setIsLink] = useState(false);
@@ -241,8 +242,8 @@ function useFloatingTextFormatToolbar(
         return;
       }
       const node = getSelectedNode(selection);
-      const element = node.getTopLevelElementOrThrow();
-      const align = element.getFormatType();
+      // a selection on the root itself (keyboard focus of an empty editor) has no top-level element
+      const align = $isRootOrShadowRoot(node) ? "" : node.getTopLevelElementOrThrow().getFormatType();
 
       // Update text format
       setIsBold(selection.hasFormat("bold"));
@@ -327,7 +328,7 @@ export const FloatingTextFormatToolbarPlugin = ({
 }: {
   anchorElem?: HTMLElement;
   setIsLinkEditMode: Dispatch<boolean>;
-  controls?: Array<TToolbarTextFormatControl>;
+  controls?: TToolbarTextFormatControl[];
 }): JSX.Element | null => {
   const [editor] = useLexicalComposerContext();
   return useFloatingTextFormatToolbar(editor, anchorElem, setIsLinkEditMode, controls);
