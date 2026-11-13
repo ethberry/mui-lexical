@@ -34,6 +34,8 @@ import { useLexicalEditable } from "@lexical/react/useLexicalEditable";
 import { calculateZoomLevel, mergeRegister } from "@lexical/utils";
 import { createPortal } from "react-dom";
 
+import { useIsClient } from "../../utils/useIsClient.js";
+
 interface IPointerPosition {
   x: number;
   y: number;
@@ -417,9 +419,10 @@ export const TableCellResizerPlugin = (): null | ReactPortal => {
   const [editor] = useLexicalComposerContext();
   const isEditable = useLexicalEditable();
 
+  const isClient = useIsClient();
   return useMemo(
-    () => (isEditable ? createPortal(<TableCellResizer editor={editor} />, document.body) : null),
-    [editor, isEditable],
+    () => (isEditable && isClient ? createPortal(<TableCellResizer editor={editor} />, document.body) : null),
+    [editor, isEditable, isClient],
   );
 };
 
