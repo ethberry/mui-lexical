@@ -27,3 +27,4 @@ tsconfig.jest.json
 .env.*
 /tsconfig.eslint.json
 scripts
+jsobsrc.json
