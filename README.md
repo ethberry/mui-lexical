@@ -1,5 +1,8 @@
 # mui-lexical
 
+Peers: `lexical` and `@lexical/react` (0.53), `react`, `react-dom`, `@mui/material`, `@mui/icons-material`,
+`@mui/system`. The app declares them in its own dependencies; the other `@lexical/*` packages come with this one.
+
 # Installation
 
 ```bash

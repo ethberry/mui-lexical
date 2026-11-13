@@ -26,3 +26,4 @@ tsconfig.jest.json
 .env
 .env.*
 /tsconfig.eslint.json
+scripts
