@@ -21,6 +21,7 @@ Level 1: no dependencies on other `@ethberry/*` runtime packages. Released befor
 - All `lexical` / `@lexical/*` packages are on one exact version; update them together in one change.
 - ESM only (`nodenext`, `.js` in relative imports). Jest runs with `NODE_OPTIONS=--experimental-vm-modules`.
 - The version is set by the release workflow (`npm version`), not by conventional commits.
+- Published as plain code, not obfuscated, on purpose: a single public package (ADR 0001 in ethberry/common-packages). Do not add an obfuscate step.
 
 ## Docs
 
