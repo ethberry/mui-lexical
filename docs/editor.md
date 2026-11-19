@@ -30,6 +30,15 @@ Errors thrown inside Lexical (`onError`) are rethrown. The floating toolbars (li
 actions, table hover actions, text format) are anchored in the editor's own element; the code / table hover and
 text-format ones are hidden on narrow viewports.
 
+## Console and styles
+
+- The editor with its toolbar renders without React or emotion warnings (`src/editor/console.test.tsx`): the toolbar
+  renders each control group as a keyed list (the control name is the key).
+- `muiLexicalStyles` (`editorStyles`, `playgroundEditorThemeStyles`) uses no `:first-child`, `:nth-child` or
+  `:nth-last-child`, which emotion reports as unsafe with server rendering. A first child is written `X:not(* + X)`
+  (an `X` without a previous sibling element), even rows `tr:nth-of-type(even)`; a test checks both against the old
+  selectors on the same markup.
+
 ## Display
 
 `Display` renders `data` (a document string, empty by default) read-only. `onError` receives load errors;

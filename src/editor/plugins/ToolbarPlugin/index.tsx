@@ -54,7 +54,7 @@ import {
   ClearEditorButton,
 } from "../../ui/index.js";
 import { getSelectedNode, sanitizeUrl } from "../../utils/index.js";
-import { IControlsMap, IToolbarControls } from "../../types/index.js";
+import { IControlsMap, IToolbarControls, TToolbarControl } from "../../types/index.js";
 import { toolbarDefaultControls } from "../../constants/index.js";
 import { clearEditor, clearFormatting } from "./utils.js";
 
@@ -333,11 +333,15 @@ export const ToolbarPlugin: FC<IToolbarPluginProps> = ({
     table: <TableButton activeEditor={activeEditor} showModal={showModal} />,
   };
 
+  // the controls of a group as a list: each needs its own key
+  const renderControls = (names: TToolbarControl[]) =>
+    names.map(name => <Fragment key={name}>{controlsMap[name]}</Fragment>);
+
   return (
     <div className="toolbar">
       {!!controls.history?.length && (
         <Fragment key={"toolbar-history-block"}>
-          {controls.history.map(c => controlsMap[c])}
+          {renderControls(controls.history)}
           <Divider />
         </Fragment>
       )}
@@ -349,20 +353,20 @@ export const ToolbarPlugin: FC<IToolbarPluginProps> = ({
         <Fragment key={"toolbar-formats-block"}>
           {!!controls.textFormat?.length && (
             <Fragment key={"toolbar-text-format-block"}>
-              {controls.textFormat.map(c => controlsMap[c])}
+              {renderControls(controls.textFormat)}
               {!!controls.clear?.length && <Divider />}
             </Fragment>
           )}
 
           {!!controls.clear?.length && (
             <Fragment key={"toolbar-clear-format-block"}>
-              {controls.clear.map(c => controlsMap[c])}
+              {renderControls(controls.clear)}
               {!!controls.viewFormat?.length && <Divider />}
             </Fragment>
           )}
 
           {canViewerSeeInsertDropdown && !!controls.viewFormat?.length && (
-            <Fragment key={"toolbar-view-format-block"}>{controls.viewFormat.map(c => controlsMap[c])}</Fragment>
+            <Fragment key={"toolbar-view-format-block"}>{renderControls(controls.viewFormat)}</Fragment>
           )}
         </Fragment>
       )}
