@@ -181,7 +181,7 @@ export const editorStyles = css`
     background-size: contain;
   }
 
-  .typeahead-popover li:first-child {
+  .typeahead-popover li:not(* + li) {
     border-radius: 8px 8px 0 0;
   }
 
@@ -446,7 +446,7 @@ export const editorStyles = css`
     background-size: contain;
   }
 
-  .dropdown .item:first-child {
+  .dropdown .item:not(* + .item) {
     margin-top: 8px;
   }
 

@@ -279,21 +279,21 @@ export const playgroundEditorThemeStyles = css`
     border-bottom: 1px solid #bbb;
   }
 
-  .PlaygroundEditorTheme__tableFrozenColumn tr > td:first-child {
+  .PlaygroundEditorTheme__tableFrozenColumn tr > td:not(* + td) {
     background-color: #ffffff;
     position: sticky;
     z-index: 2;
     left: 0;
   }
 
-  .PlaygroundEditorTheme__tableFrozenColumn tr > th:first-child {
+  .PlaygroundEditorTheme__tableFrozenColumn tr > th:not(* + th) {
     background-color: #f2f3f5;
     position: sticky;
     z-index: 2;
     left: 0;
   }
 
-  .PlaygroundEditorTheme__tableFrozenColumn tr > :first-child::after {
+  .PlaygroundEditorTheme__tableFrozenColumn tr > :not(* + *)::after {
     content: "";
     position: absolute;
     left: 0;
@@ -303,7 +303,7 @@ export const playgroundEditorThemeStyles = css`
     border-right: 1px solid #bbb;
   }
 
-  .PlaygroundEditorTheme__tableRowStriping tr:nth-child(even) {
+  .PlaygroundEditorTheme__tableRowStriping tr:nth-of-type(even) {
     background-color: #f2f5fb;
   }
 
