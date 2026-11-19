@@ -20,6 +20,14 @@ const config: StorybookConfig = {
     },
   },
   webpackFinal: config => {
+    config.resolve = {
+      ...config.resolve,
+      // the sources import ESM-style ("./index.js") files that are .ts / .tsx on disk
+      extensionAlias: {
+        ".js": [".ts", ".tsx", ".js"],
+      },
+    };
+
     if (config.module?.rules) {
       config.module.rules = config.module.rules.filter(rule => {
         if (rule && typeof rule === "object" && "test" in rule && rule.test instanceof RegExp) {

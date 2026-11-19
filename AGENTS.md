@@ -11,7 +11,7 @@ Level 1: no dependencies on other `@ethberry/*` runtime packages. Released befor
 - Base branch: `main`.
 - Install: `npm ci`.
 - Build: `npm run build` (`tsc`). Test: `npm run test`. Lint: `npm run lint` (not in CI; run it locally).
-- Storybook: `npm run storybook` (port 6006), `npm run build-storybook`. There are no story tests in CI.
+- Storybook: `npm run storybook` (port 6006), `npm run build-storybook`. There are no story tests in CI (user's decision: Storybook stays a developer tool). `.storybook/main.ts` maps the ESM `.js` imports of the sources to `.ts` / `.tsx` (webpack `extensionAlias`); without it the build fails with "Can't resolve './editor/index.js'".
 - CI (`ci-test.yml`) on a PR: `npm ci`, build, test.
 - Release: `gh workflow run manual.yml --repo ethberry/mui-lexical --ref main -f bump=patch|minor|major` (default `patch`). The workflow runs `npm version` and publishes to GitHub Packages and to npmjs (public).
 
