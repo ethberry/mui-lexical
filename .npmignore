@@ -26,4 +26,11 @@ tsconfig.jest.json
 .env
 .env.*
 /tsconfig.eslint.json
+/eslint.config.mjs
 scripts
+
+# agent instructions and local dev-chain files are not published
+/AGENTS.md
+/CLAUDE.md
+/eslint.config.mjs
+/docs
