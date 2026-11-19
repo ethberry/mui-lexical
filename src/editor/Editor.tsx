@@ -51,6 +51,7 @@ const EditorContent = (props: TEditorContentProps) => {
     onTextChange,
     onBlur,
     onFocus,
+    "data-testid": testId,
   } = props;
   const { historyState } = useSharedHistoryContext();
   const isEditable = useLexicalEditable();
@@ -119,7 +120,13 @@ const EditorContent = (props: TEditorContentProps) => {
             contentEditable={
               <div className="editor-scroller">
                 <div className="editor" ref={onRef}>
-                  <ContentEditable placeholder={placeholder} autoFocus={autoFocus} onBlur={onBlur} onFocus={onFocus} />
+                  <ContentEditable
+                    placeholder={placeholder}
+                    autoFocus={autoFocus}
+                    onBlur={onBlur}
+                    onFocus={onFocus}
+                    data-testid={testId}
+                  />
                 </div>
               </div>
             }
@@ -187,6 +194,8 @@ export interface IEditorProps {
   onTextChange?: (text: string) => void;
   onBlur?: () => void;
   onFocus?: () => void;
+  // goes on the contenteditable, the element a test types into
+  "data-testid"?: string;
 }
 
 export const Editor = (props: IEditorProps) => {

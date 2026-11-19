@@ -52,6 +52,12 @@ describe("Editor", () => {
     expect(document.querySelector(".ContentEditable__root")).toBeInTheDocument();
   });
 
+  it("puts data-testid on the contenteditable a test types into", () => {
+    renderWithTheme(<Editor hideToolbar data-testid="Form-description" />);
+
+    expect(screen.getByTestId("Form-description")).toBe(document.querySelector('[contenteditable="true"]'));
+  });
+
   it("shows content from initialEditorState", async () => {
     renderWithTheme(<Editor hideToolbar initialEditorState={docWithHello} />);
 
