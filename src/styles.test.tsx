@@ -20,6 +20,13 @@ describe("styles", () => {
     unmount();
   });
 
+  it("the injected styles hold no @import (a browser drops one that comes after other rules)", () => {
+    const { unmount } = render(<Editor />);
+
+    expect(injectedCss()).not.toContain("@import");
+    unmount();
+  });
+
   it("Display brings its own styles (theme)", () => {
     const { unmount } = render(<Display />);
 
