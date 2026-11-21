@@ -3,6 +3,18 @@
 Peers: `lexical` and `@lexical/react` (0.53), `react`, `react-dom`, `@mui/material`, `@mui/icons-material`,
 `@mui/system`. The app declares them in its own dependencies; the other `@lexical/*` packages come with this one.
 
+## Usage
+
+`Editor` (rich text editing) and `Display` (read-only rendering of a saved document) bring their own styles; the app
+needs no global CSS or other setup.
+
+```tsx
+import { Display, Editor } from "@ethberry/mui-lexical";
+
+<Editor initialEditorState={json} onStateChange={state => save(JSON.stringify(state.toJSON()))} />;
+<Display data={json} />;
+```
+
 # Installation
 
 ```bash

@@ -1,7 +1,7 @@
 # Editor and Display
 
 `@ethberry/mui-lexical` exports two components on Lexical: `Editor` (rich text editing) and `Display` (read-only
-rendering of a saved document). `muiLexicalStyles` holds the CSS of both; the app adds it to its global styles once.
+rendering of a saved document). Both bring their own CSS: an app renders them with no setup.
 The form input `LexicalTextEditor` of `@ethberry/mui-inputs-lexical` (mui-packages) wraps `Editor`.
 
 ## Data
@@ -29,6 +29,20 @@ Props (`IEditorProps`), all optional:
 Errors thrown inside Lexical (`onError`) are rethrown. The floating toolbars (link editor, table cell actions, code
 actions, table hover actions, text format) are anchored in the editor's own element; the code / table hover and
 text-format ones are hidden on narrow viewports.
+
+## Styles
+
+The editor is styled by the global CSS classes of the Lexical playground (toolbar, dialogs, nodes, plugins, theme).
+That CSS is `muiLexicalStyles` (`src/styles.ts`), an array of emotion styles; the package does not export it.
+`Editor` and `Display` each render
+`<GlobalStyles styles={muiLexicalStyles} />` (MUI, emotion) inside their `LexicalComposer`:
+
+- the CSS is in the page while at least one editor or display is mounted, and leaves with the last one;
+- each mounted component inserts its own copy of the same rules; identical copies do not change the result, and
+  unmounting one leaves the others' copies in place (`src/styles.test.tsx`).
+
+`Display` adds MUI-theme colors (text, headings, quotes, code, links) through `StyledEditorWrapper`
+(`src/display/styled.ts`). The playground CSS itself uses fixed colors, not the MUI theme.
 
 ## Console and styles
 
