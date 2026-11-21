@@ -1,9 +1,7 @@
 import type { Decorator, Preview } from "@storybook/react-webpack5";
 import { ThemeProvider, createTheme, CssBaseline, StyledEngineProvider } from "@mui/material";
-import { CacheProvider, Global } from "@emotion/react";
+import { CacheProvider } from "@emotion/react";
 import createCache from "@emotion/cache";
-
-import { muiLexicalStyles } from "../src";
 
 const muiCache = createCache({
   key: "mui",
@@ -18,7 +16,6 @@ const withMuiTheme: Decorator = Story => {
       <StyledEngineProvider>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <Global styles={muiLexicalStyles} />
           <div style={{ padding: "20px", minHeight: "100vh" }}>
             <Story />
           </div>
