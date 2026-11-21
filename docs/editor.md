@@ -39,7 +39,10 @@ That CSS is `muiLexicalStyles` (`src/styles.ts`), an array of emotion styles; th
 
 - the CSS is in the page while at least one editor or display is mounted, and leaves with the last one;
 - each mounted component inserts its own copy of the same rules; identical copies do not change the result, and
-  unmounting one leaves the others' copies in place (`src/styles.test.tsx`).
+  unmounting one leaves the others' copies in place (`src/styles.test.tsx`);
+- the CSS holds no `@import`: injected after the page's other rules, a browser drops it and emotion logs an error.
+  The package loads no web fonts; `.sticky-note` (playground CSS for a node this package does not have) names
+  "Reenie Beanie" and falls back to the app's font.
 
 `Display` adds MUI-theme colors (text, headings, quotes, code, links) through `StyledEditorWrapper`
 (`src/display/styled.ts`). The playground CSS itself uses fixed colors, not the MUI theme.

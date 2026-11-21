@@ -1,8 +1,6 @@
 import { css } from "@mui/material";
 
 export const editorStyles = css`
-  @import "https://fonts.googleapis.com/css?family=Reenie+Beanie";
-
   .editor-shell {
     margin: 20px auto;
     border-radius: 2px;
