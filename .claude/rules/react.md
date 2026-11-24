@@ -27,7 +27,7 @@ paths:
 - After a mutation, refresh what it changed: `invalidateQueries` with the resource prefix, or `setQueryData` when the response is the new value. Do not refetch everything.
 - Data copied from a list into the item cache is marked stale (`setQueryData(key, row, { updatedAt: 0 })`), so the full item is still fetched.
 - Server data never goes into redux or component state; redux holds only UI state (theme, language, layout). A store or `QueryClient` is created once at module level, never inside a component.
-- Errors: an HTTP 400 of a form submit is mapped onto the form fields; other errors show a snackbar. One error should show one snackbar even when several components subscribe to the same query (today `useApiQuery` shows one per hook instance — a known follow-up, not a pattern to build on).
+- Errors: an HTTP 400 of a form submit is mapped onto the form fields; other errors show a snackbar. One error shows one snackbar even when several components subscribe to the same query: `useApiQuery` shows its default snackbar once per error object, so a component does not add its own snackbar for a query error.
 - `enabled` for dependent queries instead of conditional hooks; `placeholderData: keepPreviousData` for paginated lists.
 
 ```tsx
