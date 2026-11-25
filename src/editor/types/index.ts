@@ -19,12 +19,12 @@ export type TToolbarControl =
   | "codeLanguages";
 
 export interface IToolbarControls {
-  history?: Array<TToolbarHistoryControl>;
-  textFormat?: Array<TToolbarTextFormatControl>;
-  blockFormat?: Array<TToolbarBlockFormatControl>;
-  viewFormat?: Array<TToolbarViewFormatControl>;
-  codeLanguages?: Array<TToolbarCodeLanguagesControl>;
-  clear?: Array<TToolbarClearControl>;
+  history?: TToolbarHistoryControl[];
+  textFormat?: TToolbarTextFormatControl[];
+  blockFormat?: TToolbarBlockFormatControl[];
+  viewFormat?: TToolbarViewFormatControl[];
+  codeLanguages?: TToolbarCodeLanguagesControl[];
+  clear?: TToolbarClearControl[];
 }
 
 export type IControlsMap = Record<TToolbarControl, ReactElement>;

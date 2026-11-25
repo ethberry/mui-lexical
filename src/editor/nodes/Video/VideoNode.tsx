@@ -82,7 +82,7 @@ export class VideoNode extends DecoratorNode<React.JSX.Element> {
         const el = domNode as HTMLIFrameElement;
         if (!(el instanceof HTMLIFrameElement)) return null;
 
-        const src = el.getAttribute("src") || "";
+        const src = el.getAttribute("src") ?? "";
         const parsed = parseVideoUrl(src);
         if (!parsed) return null;
 
@@ -102,7 +102,7 @@ export class VideoNode extends DecoratorNode<React.JSX.Element> {
         const iframe = el.querySelector("iframe");
         if (!(iframe instanceof HTMLIFrameElement)) return null;
 
-        const src = iframe.getAttribute("src") || "";
+        const src = iframe.getAttribute("src") ?? "";
         const parsed = parseVideoUrl(src);
         if (!parsed) return null;
 

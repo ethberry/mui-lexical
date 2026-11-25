@@ -40,8 +40,7 @@ export interface IImagePayload {
 
 function isGoogleDocCheckboxImg(img: HTMLImageElement): boolean {
   return (
-    img.parentElement != null &&
-    img.parentElement.tagName === "LI" &&
+    img.parentElement?.tagName === "LI" &&
     img.previousSibling === null &&
     img.getAttribute("aria-roledescription") === "checkbox"
   );
@@ -96,16 +95,17 @@ export class ImageNode extends DecoratorNode<JSX.Element> {
     this.__src = src;
     this.__altText = altText;
     this.__maxWidth = maxWidth;
-    this.__width = width || "inherit";
-    this.__height = height || "inherit";
-    this.__showCaption = showCaption || false;
+    // a width or height of 0 means "not set", as undefined does
+    this.__width = (width ?? 0) || "inherit";
+    this.__height = (height ?? 0) || "inherit";
+    this.__showCaption = showCaption ?? false;
     this.__caption =
-      caption ||
+      caption ??
       createEditor({
         namespace: "Playground/ImageNodeCaption",
         nodes: [RootNode, TextNode, LineBreakNode, ParagraphNode, LinkNode, HashtagNode],
       });
-    this.__captionsEnabled = captionsEnabled || captionsEnabled === undefined;
+    this.__captionsEnabled = captionsEnabled ?? true;
   }
 
   static getType(): string {

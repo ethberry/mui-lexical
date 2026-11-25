@@ -55,7 +55,7 @@ const DropDownItems = ({
   dropDownRef: Ref<HTMLDivElement>;
   onClose: () => void;
 }) => {
-  const [items, setItems] = useState<RefObject<HTMLButtonElement>[]>();
+  const [items, setItems] = useState<Array<RefObject<HTMLButtonElement>>>();
   const [highlightedItem, setHighlightedItem] = useState<RefObject<HTMLButtonElement>>();
 
   const registerItem = useCallback(
@@ -215,7 +215,7 @@ export const DropDown = ({
       <button
         type="button"
         disabled={disabled}
-        aria-label={buttonAriaLabel || buttonLabel}
+        aria-label={(buttonAriaLabel ?? "") || buttonLabel}
         className={buttonClassName}
         onClick={() => setShowDropDown(!showDropDown)}
         ref={buttonRef}

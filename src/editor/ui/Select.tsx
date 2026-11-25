@@ -13,7 +13,7 @@ export const Select = ({ children, label, className, ...other }: ISelectProps): 
       <label style={{ marginTop: "-1em" }} className="Input__label">
         {label}
       </label>
-      <select {...other} className={className || "select"}>
+      <select {...other} className={(className ?? "") || "select"}>
         {children}
       </select>
     </div>

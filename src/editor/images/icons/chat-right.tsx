@@ -7,4 +7,3 @@ export const ChatRightIcon = () => {
     </svg>
   );
 };
-

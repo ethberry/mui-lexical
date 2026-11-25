@@ -251,9 +251,9 @@ function getMouseInfo(
     const tableDOMNode = target.closest<HTMLElement>(`td${tableCellClass}, th${tableCellClass}`);
 
     const isOutside = !(
-      tableDOMNode ||
-      target.closest<HTMLElement>(`button${getThemeSelector(getTheme, "tableAddRows")}`) ||
-      target.closest<HTMLElement>(`button${getThemeSelector(getTheme, "tableAddColumns")}`) ||
+      tableDOMNode ??
+      target.closest<HTMLElement>(`button${getThemeSelector(getTheme, "tableAddRows")}`) ??
+      target.closest<HTMLElement>(`button${getThemeSelector(getTheme, "tableAddColumns")}`) ??
       target.closest<HTMLElement>("div.TableCellResizer__resizer")
     );
 

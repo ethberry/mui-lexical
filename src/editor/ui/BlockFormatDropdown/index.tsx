@@ -54,7 +54,7 @@ const formatBlockIcons: Record<BlockType, () => JSX.Element> = {
   code: CodeIcon,
 };
 
-const blockFormatOptions: Array<IBlockFormatOptions> = [
+const blockFormatOptions: IBlockFormatOptions[] = [
   {
     blockType: "paragraph",
     title: blockTypeToBlockName.paragraph,
@@ -83,7 +83,7 @@ export const BlockFormatDropDown = ({
   blockType: BlockType;
   editor: LexicalEditor;
   disabled?: boolean;
-  controls?: Array<TToolbarBlockFormatControl>;
+  controls?: TToolbarBlockFormatControl[];
 }): JSX.Element => {
   const onClItemClick = useMemo(() => {
     const clickActions: Record<BlockType, () => void> = {

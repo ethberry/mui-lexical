@@ -7,4 +7,3 @@ export const TypeUnderlineIcon = () => {
     </svg>
   );
 };
-

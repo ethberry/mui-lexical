@@ -7,4 +7,3 @@ export const TypeH5Icon = () => {
     </svg>
   );
 };
-

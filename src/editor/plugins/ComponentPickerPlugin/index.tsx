@@ -50,7 +50,7 @@ class ComponentPickerOption extends MenuOption {
   // Icon for display
   icon?: JSX.Element;
   // For extra searching.
-  keywords: Array<string>;
+  keywords: string[];
   // TBD
   keyboardShortcut?: string;
   // What happens when you select this option?
@@ -60,14 +60,14 @@ class ComponentPickerOption extends MenuOption {
     title: string,
     options: {
       icon?: JSX.Element;
-      keywords?: Array<string>;
+      keywords?: string[];
       keyboardShortcut?: string;
       onSelect: (queryString: string) => void;
     },
   ) {
     super(title);
     this.title = title;
-    this.keywords = options.keywords || [];
+    this.keywords = options.keywords ?? [];
     this.icon = options.icon;
     this.keyboardShortcut = options.keyboardShortcut;
     this.onSelect = options.onSelect.bind(this);
@@ -110,7 +110,7 @@ function ComponentPickerMenuItem({
 }
 
 function getDynamicOptions(editor: LexicalEditor, queryString: string) {
-  const options: Array<ComponentPickerOption> = [];
+  const options: ComponentPickerOption[] = [];
 
   if (queryString == null) {
     return options;

@@ -401,12 +401,12 @@ function TableCellResizer({ editor }: { editor: LexicalEditor }): JSX.Element {
         <>
           <div
             className="TableCellResizer__resizer TableCellResizer__ui"
-            style={resizerStyles.right || undefined}
+            style={resizerStyles.right ?? undefined}
             onPointerDown={toggleResize("right")}
           />
           <div
             className="TableCellResizer__resizer TableCellResizer__ui"
-            style={resizerStyles.bottom || undefined}
+            style={resizerStyles.bottom ?? undefined}
             onPointerDown={toggleResize("bottom")}
           />
         </>

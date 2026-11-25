@@ -7,4 +7,3 @@ export const LockIcon = () => {
     </svg>
   );
 };
-

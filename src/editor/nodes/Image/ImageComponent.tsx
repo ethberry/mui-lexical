@@ -104,8 +104,9 @@ const LazyImage = ({
     }
 
     // Use natural dimensions if available, otherwise fallback to defaults
-    const naturalWidth = dimensions?.width || 200;
-    const naturalHeight = dimensions?.height || 200;
+    // an SVG without its own size reports 0, which falls back to the default as a missing size does
+    const naturalWidth = (dimensions?.width ?? 0) || 200;
+    const naturalHeight = (dimensions?.height ?? 0) || 200;
 
     let finalWidth = naturalWidth;
     let finalHeight = naturalHeight;
@@ -136,7 +137,7 @@ const LazyImage = ({
 
   return (
     <img
-      className={className || undefined}
+      className={className ?? undefined}
       src={src}
       alt={altText}
       ref={imageRef}

@@ -23,8 +23,8 @@ export type InsertTableCommandPayload = Readonly<{
 
 export interface ICellContextShape {
   cellEditorConfig: null | CellEditorConfig;
-  cellEditorPlugins: null | JSX.Element | Array<JSX.Element>;
-  set: (cellEditorConfig: null | CellEditorConfig, cellEditorPlugins: null | JSX.Element | Array<JSX.Element>) => void;
+  cellEditorPlugins: null | JSX.Element | JSX.Element[];
+  set: (cellEditorConfig: null | CellEditorConfig, cellEditorPlugins: null | JSX.Element | JSX.Element[]) => void;
 }
 
 export type CellEditorConfig = Readonly<{
@@ -46,7 +46,7 @@ export const CellContext = createContext<ICellContextShape>({
 export function TableContext({ children }: { children: JSX.Element }) {
   const [contextValue, setContextValue] = useState<{
     cellEditorConfig: null | CellEditorConfig;
-    cellEditorPlugins: null | JSX.Element | Array<JSX.Element>;
+    cellEditorPlugins: null | JSX.Element | JSX.Element[];
   }>({
     cellEditorConfig: null,
     cellEditorPlugins: null,
@@ -131,7 +131,7 @@ export const TablePlugin = ({
   children,
 }: {
   cellEditorConfig: CellEditorConfig;
-  children: JSX.Element | Array<JSX.Element>;
+  children: JSX.Element | JSX.Element[];
 }): JSX.Element | null => {
   const [editor] = useLexicalComposerContext();
   const cellContext = useContext(CellContext);

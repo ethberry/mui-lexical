@@ -7,4 +7,3 @@ export const StickyIcon = () => {
     </svg>
   );
 };
-
