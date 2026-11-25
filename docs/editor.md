@@ -11,6 +11,19 @@ string; the node types they know are `MuiLexicalNodes` (rich text, lists, check 
 highlighting, links, images, inline images, videos, horizontal rules). A document with an unknown node type fails to
 load.
 
+## Media nodes: empty values
+
+The playground code treats an empty value as missing in these places; a change must keep it:
+
+- An image or inline image with width or height `0` (or none) is sized `"inherit"`.
+- An image whose natural size is unknown or `0` (an SVG without its own size) is laid out as 200 × 200.
+- The image resizer's limit is the node's `maxWidth`; `0` or none means the editor width minus 20, or 100 without an
+  editor element.
+- A video's start time comes from `t` (YouTube also `start`) in the query, else from `#t=` in the hash. An empty `t`
+  falls through to `start`; a start of `0` means none, and the embed URL then has no start.
+- An empty `className` of the select falls back to `select`; an empty `buttonAriaLabel` of a dropdown falls back to
+  its `buttonLabel`.
+
 ## Editor
 
 Props (`IEditorProps`), all optional:
