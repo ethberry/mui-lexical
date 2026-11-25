@@ -65,7 +65,7 @@ const LazyImage = ({
   useSuspenseImage(src);
   return (
     <img
-      className={className || undefined}
+      className={className ?? undefined}
       src={src}
       alt={altText}
       ref={imageRef}

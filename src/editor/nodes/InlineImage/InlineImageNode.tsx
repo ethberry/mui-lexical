@@ -84,10 +84,11 @@ export class InlineImageNode extends DecoratorNode<JSX.Element> {
     super(key);
     this.__src = src;
     this.__altText = altText;
-    this.__width = width || "inherit";
-    this.__height = height || "inherit";
-    this.__showCaption = showCaption || false;
-    this.__caption = caption || createEditor();
+    // a width or height of 0 means "not set", as undefined does
+    this.__width = (width ?? 0) || "inherit";
+    this.__height = (height ?? 0) || "inherit";
+    this.__showCaption = showCaption ?? false;
+    this.__caption = caption ?? createEditor();
     this.__position = position;
   }
 

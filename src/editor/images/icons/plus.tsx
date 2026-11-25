@@ -7,4 +7,3 @@ export const PlusIcon = () => {
     </svg>
   );
 };
-

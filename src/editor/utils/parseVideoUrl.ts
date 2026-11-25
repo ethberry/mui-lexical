@@ -26,7 +26,7 @@ function parseTimeToSeconds(raw: string | null): number | undefined {
     return Number(raw);
   }
   if (raw.includes(":")) {
-    const parts = raw.split(":").map((p) => Number(p));
+    const parts = raw.split(":").map(p => Number(p));
 
     if (parts.some(Number.isNaN)) {
       return undefined;
@@ -46,7 +46,7 @@ function parseTimeToSeconds(raw: string | null): number | undefined {
     const s = m[3] ? Number(m[3]) : 0;
     return h * 3600 + min * 60 + s;
   }
-  
+
   return undefined;
 }
 
@@ -57,10 +57,7 @@ function parseYoutube(url: URL): ParsedVideo | null {
   if (host === "youtu.be") {
     const splitPathname = url.pathname.split("/").filter(Boolean);
     id = splitPathname[0] ?? null;
-  } else if (
-    host.endsWith("youtube.com") ||
-    host.endsWith("youtube-nocookie.com")
-  ) {
+  } else if (host.endsWith("youtube.com") || host.endsWith("youtube-nocookie.com")) {
     const path = url.pathname.replace(/^\/+/, "");
     const params = url.searchParams;
     if (path === "watch") {
@@ -74,16 +71,10 @@ function parseYoutube(url: URL): ParsedVideo | null {
   if (!id) return null;
 
   const start =
-    parseTimeToSeconds(
-      url.searchParams.get("t") || url.searchParams.get("start"),
-    ) ||
-    (url.hash.startsWith("#t=")
-      ? parseTimeToSeconds(url.hash.slice(3))
-      : undefined);
+    (parseTimeToSeconds((url.searchParams.get("t") ?? "") || url.searchParams.get("start")) ?? 0) ||
+    (url.hash.startsWith("#t=") ? parseTimeToSeconds(url.hash.slice(3)) : undefined);
 
-  const embedUrl = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(
-    id,
-  )}${start ? `?start=${start}` : ""}`;
+  const embedUrl = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}${start ? `?start=${start}` : ""}`;
 
   return {
     provider: "youtube",
@@ -109,10 +100,8 @@ function parseVimeo(url: URL): ParsedVideo | null {
   if (!id) return null;
 
   const start =
-    parseTimeToSeconds(url.searchParams.get("t")) ||
-    (url.hash.startsWith("#t=")
-      ? parseTimeToSeconds(url.hash.slice(3))
-      : undefined);
+    (parseTimeToSeconds(url.searchParams.get("t")) ?? 0) ||
+    (url.hash.startsWith("#t=") ? parseTimeToSeconds(url.hash.slice(3)) : undefined);
 
   const anchor = start ? `#t=${start}s` : "";
   const embedUrl = `https://player.vimeo.com/video/${encodeURIComponent(id)}${anchor}`;

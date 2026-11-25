@@ -579,9 +579,7 @@ function TableCellActionMenuContainer({ anchorElem }: { anchorElem: HTMLElement;
       editor.getEditorState().read($moveMenu);
     };
     const delayedCallback = () => {
-      if (timeoutId === undefined) {
-        timeoutId = setTimeout(callback, 0);
-      }
+      timeoutId ??= setTimeout(callback, 0);
       return false;
     };
     return mergeRegister(

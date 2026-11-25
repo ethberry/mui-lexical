@@ -205,7 +205,8 @@ export const Editor = (props: IEditorProps) => {
   return (
     <LexicalComposer
       initialConfig={{
-        editorState: initialEditorState || null,
+        // an empty string starts an empty editor: Lexical cannot parse it
+        editorState: initialEditorState?.length ? initialEditorState : null,
         editable: !readOnly,
         namespace: "Playground",
         nodes: [...MuiLexicalNodes],

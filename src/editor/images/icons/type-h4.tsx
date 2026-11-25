@@ -7,4 +7,3 @@ export const TypeH4Icon = () => {
     </svg>
   );
 };
-

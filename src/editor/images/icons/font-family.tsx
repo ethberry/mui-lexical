@@ -7,4 +7,3 @@ export const FontFamilyIcon = () => {
     </svg>
   );
 };
-

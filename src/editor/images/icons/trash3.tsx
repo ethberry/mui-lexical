@@ -7,4 +7,3 @@ export const Trash3Icon = () => {
     </svg>
   );
 };
-

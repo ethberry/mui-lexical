@@ -7,10 +7,7 @@
  */
 
 import { $isLinkNode, TOGGLE_LINK_COMMAND } from "@lexical/link";
-import {
-  NodeContextMenuOption,
-  NodeContextMenuPlugin,
-} from "@lexical/react/LexicalNodeContextMenuPlugin";
+import { NodeContextMenuOption, NodeContextMenuPlugin } from "@lexical/react/LexicalNodeContextMenuPlugin";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import {
   $getSelection,

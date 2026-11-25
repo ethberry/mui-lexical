@@ -6,8 +6,8 @@ import { dropDownActiveClass } from "../../utils/index.js";
 import { ToolbarState } from "../../context/index.js";
 import { TToolbarCodeLanguagesControl } from "../../types/index.js";
 
-function getCodeLanguageOptions(): [string, string][] {
-  const options: [string, string][] = [];
+function getCodeLanguageOptions(): Array<[string, string]> {
+  const options: Array<[string, string]> = [];
 
   for (const [lang, friendlyName] of Object.entries(CODE_LANGUAGE_FRIENDLY_NAME_MAP)) {
     options.push([lang, friendlyName]);
@@ -22,7 +22,7 @@ interface ICodeLanguageDropdownProps {
   toolbarState: ToolbarState;
   onCodeLanguageSelect: (value: string) => void;
   disabled?: boolean;
-  controls?: Array<TToolbarCodeLanguagesControl>;
+  controls?: TToolbarCodeLanguagesControl[];
 }
 
 export const CodeLanguageDropdown = (props: ICodeLanguageDropdownProps) => {

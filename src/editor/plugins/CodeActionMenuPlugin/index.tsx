@@ -63,7 +63,7 @@ function CodeActionMenuContainer({ anchorElem }: { anchorElem: HTMLElement }) {
 
         if ($isCodeNode(maybeCodeNode)) {
           codeNode = maybeCodeNode;
-          _lang = codeNode.getLanguage() || "";
+          _lang = codeNode.getLanguage() ?? "";
         }
       });
 
@@ -148,7 +148,7 @@ function getMouseInfo(event: MouseEvent): {
 
   if (isHTMLElement(target)) {
     const codeDOMNode = target.closest<HTMLElement>("code.PlaygroundEditorTheme__code");
-    const isOutside = !(codeDOMNode || target.closest<HTMLElement>("div.code-action-menu-container"));
+    const isOutside = !(codeDOMNode ?? target.closest<HTMLElement>("div.code-action-menu-container"));
 
     return { codeDOMNode, isOutside };
   } else {
