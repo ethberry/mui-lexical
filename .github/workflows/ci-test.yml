@@ -41,6 +41,10 @@ jobs:
       - name: Install Packages
         run: npm ci
 
+      # fails on any lint error, a focused test (.only) included
+      - name: Lint
+        run: npm run lint
+
       - name: Build Packages
         run: npm run build
 
