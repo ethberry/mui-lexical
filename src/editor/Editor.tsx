@@ -15,9 +15,8 @@ import { CAN_USE_DOM } from "@lexical/utils";
 import { LexicalComposer } from "@lexical/react/LexicalComposer";
 import { EditorState } from "lexical";
 import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin";
-import { GlobalStyles } from "@mui/material";
 
-import { muiLexicalStyles } from "../styles.js";
+import { MuiLexicalGlobalStyles } from "../global-styles.js";
 import { SharedHistoryContext, ToolbarContext, useSharedHistoryContext } from "./context/index.js";
 import {
   CodeActionMenuPlugin,
@@ -216,7 +215,7 @@ export const Editor = (props: IEditorProps) => {
         theme: playgroundEditorTheme,
       }}
     >
-      <GlobalStyles styles={muiLexicalStyles} />
+      <MuiLexicalGlobalStyles />
       <EditorContent {...restProps} />
     </LexicalComposer>
   );

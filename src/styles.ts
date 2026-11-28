@@ -10,7 +10,7 @@ import { componentsStyles } from "./editor/ui/index.js";
 import { imageNodeStyles, videoNodeStyles, inlineImageNodeStyles } from "./editor/nodes/index.js";
 
 // The global CSS of the editor and of the display (the Lexical playground classes). Not exported from the package:
-// Editor and Display render it themselves with GlobalStyles, so an app needs no setup.
+// Editor and Display render it themselves through MuiLexicalGlobalStyles (one copy per page), so an app needs no setup.
 export const muiLexicalStyles = [
   ...componentsStyles,
   editorStyles,
