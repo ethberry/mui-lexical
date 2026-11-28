@@ -85,7 +85,7 @@ C=<folder with the checkouts>; LOG=$C/release.log; : > "$LOG"
 ( s=0; while :; do sleep 10; s=$((s+10)); echo "[heartbeat ${s}s]"; done ) & HB=$!
 F='added|lerna (success|ERR|WARN)|Changes:|=>|published|Successfully|ERR!|error'   # progress and error lines
 REPOS="repo-a repo-b"
-STEPS=("git fetch -q origin" "git checkout -q -B main origin/main" "git status --short" "npm ci" "npm run build" "npm run obfuscate" "npm run lerna:version -- --yes" "npm run lerna:publish")
+STEPS=("git fetch -q origin" "git checkout -q -B main origin/main" "git status --short" "npm ci" "npm run build" "npm run obfuscate" "npm run lerna:version -- minor --yes" "npm run lerna:publish")
 N=$(( $(echo $REPOS | wc -w) * ${#STEPS[@]} )); k=0
 for r in $REPOS; do
   cd "$C/$r" || exit 1
@@ -102,3 +102,4 @@ kill $HB; echo "== done, log: $LOG"
 - **The percentage** comes from the known number of steps; the visible lines (`Changes: a 1.0.0 => 1.1.0`, `published …`) show the versions without opening the log.
 - **`git status --short`** before versioning shows any leftover change that would block `lerna version`.
 - Each release still needs the user's explicit yes; the script only makes it visible and safe to stop.
+- The bump is always named (`minor` or `patch`, never left to conventional commits), and the `Changes:` lines are read before publishing: a major stops the release (`packages` rule).
