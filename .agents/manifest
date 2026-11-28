@@ -1,15 +1,15 @@
 # Rendered kit files in this repository, with the hash of what sync wrote. Sync updates a file only while it still has that hash; a file changed here is held for manual handling. Put repository changes into .agents/rules.
-.claude/rules/documentation.md	546c4163adfbd9f5ea2daebfd396fdb9ed0be5052ea50d61f3a8e71aa3e6e7ed
+.claude/rules/documentation.md	40b8e31b9cf2e3fc583ebf435899afc6c25633dc701522d656a360f3047ffdd4
 .claude/rules/jest.md	523b094e44a1d5fa79df863b182628e0a9d08c45d461e5d62e03366bb2cabfda
 .claude/rules/kiss-dry-yagni.md	00a2e9fb4e9145e2cfce7fd285a67dfcff17a5e98c7a3ee7bc7e000c7f9453f1
-.claude/rules/long-running.md	1606f0febf1f5dfb568fb25285e927a3e3c78e10a8253ffeb02ccfac3a743961
+.claude/rules/long-running.md	9c12d497e0dc0f9205b6bcd590996c811d1d8229ff982b3bb8ab0ae62db753ca
 .claude/rules/mui.md	a471f493d2e70250ceb03eb19ccc93840263f1298124856bbbb08679be8ec23e
-.claude/rules/packages.md	84b9293ecc974f46fade3b4ead193d277b7cf3b8209328a60054c38ca2af0dcb
+.claude/rules/packages.md	f2b41128989d197f336d7f237073b7da9c4450726e43ac3539d349a5d5527b74
 .claude/rules/python.md	bcab4e5a5b1c67499647d8879f734f9b1942ede1c946808cfc0c61f3d7b61028
 .claude/rules/react.md	9f964c29c044c5e5494cb9a53cdfea8c194a6eed2972055353e95796cd353da0
 .claude/rules/repository-boundaries.md	d3ed189038436d3dca6b8f63fade2038407db61027fcc643a83bba7ef952c09a
 .claude/rules/storybook.md	6b470dd8d7178e83a66b4db5861dc3b55c5342c5658e816b78d6912d8de7aec9
-.claude/rules/testing.md
-.claude/rules/typescript.md
-.claude/rules/versions.md	43fd14ecbaafbee50bd183d1db74547f6de13879a8764e09890867589b2a4b1d
-.claude/rules/workflow.md
+.claude/rules/testing.md	4ede05f079c60b6d9984e60ca099f2cff55f9c341953c52d5a3eced13aba7015
+.claude/rules/typescript.md	b2219bc9ee597d66114f2ae28fcf127016aa0970b38b764556e04a41f7d70a2f
+.claude/rules/versions.md	dcab043b937f52eefaec32a9c4aa1b955b5f7d9736dd9fda23a1e700e7298c44
+.claude/rules/workflow.md	fa689da6034043ff1a00e2d5337e24c29aa7171db39f09d9f1c6de85e434d093

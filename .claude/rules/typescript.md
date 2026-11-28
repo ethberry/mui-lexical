@@ -371,6 +371,11 @@ const query = plainToInstance(GetTransactionsQueryDTO, {
 });
 ```
 
+## Honest types
+
+- No new `any`, `as any`, `as unknown as` or `@ts-ignore`: `unknown` with narrowing, or a generic. ESLint allows `any` on purpose; the standard is held in review and the lint rules are not changed for it.
+- A type is not weakened to cut a dependency: no dropped `implements`, local copy or `Pick` of a shared interface. The fix is structural (move the code or the types to the right level), and the user chooses it.
+
 ## Retired libraries
 
 Not used any more; no new code, dependency or helper on them, and existing usages are migrated as their own change (a whole file or module at a time):

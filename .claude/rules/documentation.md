@@ -113,7 +113,8 @@ While working on a task you notice things that are not part of it: a bug, a secu
 - Every question you asked the user that is still unanswered also goes into `docs/questions.md` — whether it scrolled away, was not noticed or could not be answered yet — with the date it was asked and what waits on it. Ask it again in your next report; remove it once answered, and write the answer where it belongs (a note, an ADR, the item it unblocks).
 - Security holes and data loss are marked as such and named in the report every time until they are taken into work.
 - Remove an item when it is done or becomes a GitHub issue or PR (link it). The plan file is not a status log or a history of the session: what was merged is in git.
-- Write the files of the repositories you own. A finding in a repository another session owns goes into that repository's `docs/plan.md` under a heading that names you, and you tell the user.
+- Write the files of the repositories you own, never another session's. A finding in a repository another session owns goes to the Coordinator, who opens it as an issue at the owner (`workflow` rule, "Bugs are GitHub issues"); you tell the user.
+- A bug is a GitHub issue, not a plan item: the plan file links the issue instead of repeating it.
 
 ## Names and keys
 
