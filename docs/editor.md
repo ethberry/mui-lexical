@@ -48,11 +48,19 @@ text-format ones are hidden on narrow viewports.
 The editor is styled by the global CSS classes of the Lexical playground (toolbar, dialogs, nodes, plugins, theme).
 That CSS is `muiLexicalStyles` (`src/styles.ts`), an array of emotion styles; the package does not export it.
 `Editor` and `Display` each render
-`<GlobalStyles styles={muiLexicalStyles} />` (MUI, emotion) inside their `LexicalComposer`:
+`<MuiLexicalGlobalStyles />` (`src/global-styles.tsx`) inside their `LexicalComposer`, and it renders MUI's
+`<GlobalStyles styles={muiLexicalStyles} />` (emotion) in one of them only:
 
-- the CSS is in the page while at least one editor or display is mounted, and leaves with the last one;
-- each mounted component inserts its own copy of the same rules; identical copies do not change the result, and
-  unmounting one leaves the others' copies in place (`src/styles.test.tsx`);
+- emotion does not deduplicate Global styles: every `GlobalStyles` inserts its own copy of all the rules, and with a
+  `Display` per list item the page hangs in emotion's style insertion. So the mounted instances are kept in a
+  module-level list (registered in a layout effect, before the browser paints), and only the first one renders the
+  styles; the others render nothing. When it unmounts, the next one renders them.
+- the CSS is in the page once while at least one editor or display is mounted, and leaves with the last one
+  (`src/styles.test.tsx`: 25 displays and an editor insert one copy; unmounting the first keeps one copy);
+- a server render and the hydration of its markup (`useSyncExternalStore`'s server snapshot) render the styles in
+  every instance, as the server registers no mounts; after hydration the client keeps one copy;
+- the list is per loaded copy of the package and per JavaScript realm: one document. Components rendered into another
+  document (an iframe with its own emotion cache) would get no styles while an instance in the main document owns them;
 - the CSS holds no `@import`: injected after the page's other rules, a browser drops it and emotion logs an error.
   The package loads no web fonts; `.sticky-note` (playground CSS for a node this package does not have) names
   "Reenie Beanie" and falls back to the app's font.

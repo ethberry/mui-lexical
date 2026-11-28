@@ -5,9 +5,8 @@ import { ContentEditable } from "@lexical/react/LexicalContentEditable";
 import { LexicalErrorBoundary } from "@lexical/react/LexicalErrorBoundary";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import { ClickableLinkPlugin } from "@lexical/react/LexicalClickableLinkPlugin";
-import { GlobalStyles } from "@mui/material";
 
-import { muiLexicalStyles } from "../styles.js";
+import { MuiLexicalGlobalStyles } from "../global-styles.js";
 import { playgroundEditorTheme } from "../editor/themes/playgroundEditorTheme.js";
 import { MuiLexicalNodes } from "../editor/nodes/index.js";
 import { StyledEditorWrapper } from "./styled.js";
@@ -53,7 +52,7 @@ export const Display = (props: IDisplayProps) => {
 
   return (
     <LexicalComposer initialConfig={initialConfig}>
-      <GlobalStyles styles={muiLexicalStyles} />
+      <MuiLexicalGlobalStyles />
       <StyledEditorWrapper>
         <RichTextPlugin
           contentEditable={<ContentEditable className="editor-input" />}
